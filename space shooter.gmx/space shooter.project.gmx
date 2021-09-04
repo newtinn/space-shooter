@@ -66,6 +66,7 @@
       <sprite>sprites\spr_fade</sprite>
       <sprite>sprites\spr_particle</sprite>
       <sprite>sprites\spr_select</sprite>
+      <sprite>sprites\spr_bubble</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -107,6 +108,7 @@
       <object>objects\obj_elephant</object>
       <object>objects\obj_boss2</object>
       <object>objects\obj_puddle</object>
+      <object>objects\obj_bubble</object>
     </objects>
     <objects name="Player">
       <object>objects\obj_player</object>
@@ -132,10 +134,12 @@
     <objects name="Menu">
       <object>objects\obj_select</object>
       <object>objects\obj_arrow_select</object>
+      <object>objects\obj_title</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Menu">
+      <room>rooms\rm_title</room>
       <room>rooms\rm_select</room>
     </rooms>
     <rooms name="Boss 1">

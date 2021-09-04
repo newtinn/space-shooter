@@ -10,3 +10,7 @@ if (global.prevroom == rm_boss2) && (room == rm_main) {
     x = room_width-64;
     y = 320;
 }
+if (global.prevroom == "") && (room == rm_main) {
+    x = room_width/2;
+    y = room_height/2;
+}

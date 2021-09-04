@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>currentFrame[0] = spr_player_gmo_1;
+            <string>/// Initializing variables
+
+currentFrame[0] = spr_player_gmo_1;
 currentFrame[1] = spr_player_gmo_2;
 currentFrame[2] = spr_player_gmo_3;
 currentFrame[3] = spr_player_gmo_5;
@@ -34,8 +36,10 @@ currentFrameNum = 0;
 TitleY = (view_hport[0]/2)-48;
 
 fadeRect = 0;
+fadeRectTextTimer = 60;
 textFade = 1;
 button1Colour = c_white;
+button2Colour = c_white;
 
 // text stuff
 count = 0;
@@ -67,7 +71,9 @@ textShowTimer = 50;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (currentFrameNum &lt; array_length_1d(currentFrame)-1) {
+            <string>/// Step event
+
+if (currentFrameNum &lt; array_length_1d(currentFrame)-1) {
     currentFrameNum += 0.05;
 } else {
     currentFrameNum = array_length_1d(currentFrame)-1;
@@ -83,6 +89,10 @@ if (instance_exists(obj_fade)) {
 if (fadeRect &lt; 1) {
     fadeRect += 0.01;
 } else {
+    if (fadeRectTextTimer &gt; 0) {
+        fadeRectTextTimer -= 1;
+    }
+
     if (str != messageNormal) {
         textSpeed += 1;
         if (textSpeed &gt; 15) {
@@ -95,7 +105,26 @@ if (fadeRect &lt; 1) {
     }
 }
 if (instance_exists(obj_fade)) {
-    textFade -= 0.0125;
+    textFade -= 0.015;
+}
+
+/* making buttons clickable */
+
+if (str == messageNormal) &amp;&amp; (textShowTimer == 0) {
+
+    /* restart button */
+    if ((mouse_x &gt; 260) &amp;&amp; (mouse_x &lt; 370)) &amp;&amp; ((mouse_y &lt; 245) &amp;&amp; (mouse_y &gt; 220)) {
+        button1Colour = c_red;
+    } else {
+        button1Colour = c_white;
+    }
+    
+    /* menu button */
+    if ((mouse_x &gt; 280) &amp;&amp; (mouse_x &lt; 350)) &amp;&amp; ((mouse_y &gt; 250) &amp;&amp; (mouse_y &lt; 275)) {
+        button2Colour = c_red;
+    } else {
+        button2Colour = c_white;
+    }
 }
 </string>
           </argument>
@@ -125,6 +154,13 @@ if (instance_exists(obj_fade)) {
         fade.roomTo = "restart";
     }
 }
+
+if (button2Colour == c_red) {
+    if (instance_number(obj_fade) &lt; 1) {
+        fade = instance_create(0,0,obj_fade);
+        fade.roomTo = rm_title;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -147,7 +183,9 @@ if (instance_exists(obj_fade)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>display_set_gui_size(surface_get_width(application_surface), surface_get_height(application_surface));
+            <string>/// Drawing stuff
+
+display_set_gui_size(surface_get_width(application_surface), surface_get_height(application_surface));
 
 // drawing rectangle
 draw_set_alpha(fadeRect);
@@ -158,7 +196,7 @@ draw_set_alpha(textFade);
 draw_set_colour(c_white);
 
 // adding to text
-if (fadeRect == 1) {
+if (fadeRect == 1) &amp;&amp; (fadeRectTextTimer == 0) {
     if (string_length(str) &lt; string_length(message)) {
         if (textSpeed == 0) {
             currentChar = string_char_at(message, count);
@@ -198,7 +236,7 @@ if (str == messageNormal) &amp;&amp; (textShowTimer == 0) {
     draw_set_halign(fa_center);
     draw_set_colour(button1Colour);
     draw_text_transformed(view_wport[0]/2, TitleY+42, text2, scale2, scale2, 0);
-    draw_set_colour(c_white);
+    draw_set_colour(button2Colour);
     draw_text_transformed(view_wport[0]/2, TitleY+58, text3, scale3, scale3, 0);
 }
 </string>

@@ -57,8 +57,8 @@
     <instance objName="obj_wall" x="0" y="0" name="inst_C0A7E8DE" locked="0" code="" scaleX="2" scaleY="9" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="0" y="352" name="inst_054317E1" locked="0" code="" scaleX="2" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="obj_room_change" x="0" y="288" name="inst_94F92B2B" locked="0" code="roomTo = rm_boss1_corridor;" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="288" y="128" name="inst_609CFB17" locked="0" code="x = room_width/2;&#xA;y = room_height/2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gun" x="288" y="128" name="inst_B4A02A45" locked="0" code="x = room_width/2;&#xA;y = room_height/2;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="288" y="128" name="inst_609CFB17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gun" x="288" y="128" name="inst_B4A02A45" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="576" y="352" name="inst_4520558B" locked="0" code="" scaleX="2" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="obj_room_change" x="608" y="288" name="inst_2301314E" locked="0" code="roomTo = rm_boss2;&#xA;" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
     <instance objName="obj_control" x="128" y="64" name="inst_20883E7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

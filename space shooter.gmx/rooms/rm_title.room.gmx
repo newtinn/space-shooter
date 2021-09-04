@@ -13,7 +13,7 @@
   <code>randomize();
 global.playerColour[0] = c_white;
 global.playerColour[1] = c_blue;
-global.playerColour[2] = make_colour_rgb(211,88,88);
+global.playerColour[2] = make_colour_rgb(255,85,85);
 global.playerColour[3] = c_purple;
 global.playerColour[4] = c_lime;
 global.playerColour[5] = c_yellow;
@@ -69,7 +69,7 @@ global.myColour = 0;</code>
   </views>
   <instances>
     <instance objName="obj_control" x="0" y="0" name="inst_4A0B24BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_select" x="32" y="0" name="inst_D3FB6D46" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_title" x="32" y="64" name="inst_1537FB39" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
