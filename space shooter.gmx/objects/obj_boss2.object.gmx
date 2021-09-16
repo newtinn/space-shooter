@@ -51,7 +51,7 @@ shootTimer = 50;
 hit = false;
 hitCountdown = 0;
 
-global.boss2health = 50;
+global.boss2health = 50; // default is 50
 
 if (global.bossDone[1] &gt; 0) {
     instance_destroy();
@@ -78,6 +78,31 @@ MoveAI = false;
 direction = 270;
 image_angle = 270;
 alarm[0] = 90;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (instance_exists(obj_door)) {
+    obj_door.wayAnimation = "backwards";
+}
 </string>
           </argument>
         </arguments>
@@ -127,6 +152,7 @@ alarm[0] = 90;
 if (MoveAI == true) &amp;&amp; (global.paused == false) {
     scr_boss2_ai();
 }
+
 // checking if paused
 if (global.paused == true) {
     speed = 0;

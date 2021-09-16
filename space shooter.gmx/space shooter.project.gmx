@@ -6,6 +6,21 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprites name="Boss2">
+      <sprites name="Elephant">
+        <sprite>sprites\spr_elephant_idle</sprite>
+      </sprites>
+      <sprites name="Boss">
+        <sprite>sprites\spr_boss2_0</sprite>
+        <sprite>sprites\spr_boss2_1</sprite>
+        <sprite>sprites\spr_boss2_2</sprite>
+        <sprite>sprites\spr_boss2_3</sprite>
+        <sprite>sprites\spr_boss2_4</sprite>
+        <sprite>sprites\spr_boss2_shoot</sprite>
+        <sprite>sprites\spr_boss2_head</sprite>
+      </sprites>
+      <sprite>sprites\spr_puddle</sprite>
+    </sprites>
     <sprites name="Player">
       <sprites name="Walking">
         <sprite>sprites\spr_player_0</sprite>
@@ -42,23 +57,15 @@
       <sprite>sprites\spr_door_horizontal_close</sprite>
       <sprite>sprites\spr_door_horizontal_open</sprite>
     </sprites>
-    <sprites name="Boss2">
-      <sprites name="Elephant">
-        <sprite>sprites\spr_elephant_idle</sprite>
-      </sprites>
-      <sprites name="Boss">
-        <sprite>sprites\spr_boss2_0</sprite>
-        <sprite>sprites\spr_boss2_1</sprite>
-        <sprite>sprites\spr_boss2_2</sprite>
-        <sprite>sprites\spr_boss2_3</sprite>
-        <sprite>sprites\spr_boss2_4</sprite>
-        <sprite>sprites\spr_boss2_shoot</sprite>
-        <sprite>sprites\spr_boss2_head</sprite>
-      </sprites>
-      <sprite>sprites\spr_puddle</sprite>
-    </sprites>
     <sprites name="Boss3">
-      <sprite>sprites\spr_boss3</sprite>
+      <sprites name="Walking">
+        <sprite>sprites\spr_boss3_walking_0</sprite>
+        <sprite>sprites\spr_boss3_walking_1</sprite>
+        <sprite>sprites\spr_boss3_walking_2</sprite>
+        <sprite>sprites\spr_boss3_walking_3</sprite>
+        <sprite>sprites\spr_boss3_walking_4</sprite>
+      </sprites>
+      <sprite>sprites\spr_tongue</sprite>
     </sprites>
     <sprites name="misc">
       <sprite>sprites\spr_wall</sprite>
@@ -67,6 +74,9 @@
       <sprite>sprites\spr_particle</sprite>
       <sprite>sprites\spr_select</sprite>
       <sprite>sprites\spr_bubble</sprite>
+      <sprite>sprites\spr_cursor</sprite>
+      <sprite>sprites\spr_sign</sprite>
+      <sprite>sprites\spr_box</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -110,6 +120,11 @@
       <object>objects\obj_puddle</object>
       <object>objects\obj_bubble</object>
     </objects>
+    <objects name="Boss3">
+      <object>objects\obj_boss3</object>
+      <object>objects\obj_boss3_tongue</object>
+      <object>objects\obj_boss3_trail</object>
+    </objects>
     <objects name="Player">
       <object>objects\obj_player</object>
       <object>objects\obj_bullet</object>
@@ -127,19 +142,20 @@
       <object>objects\obj_particle</object>
       <object>objects\obj_screenshake</object>
       <object>objects\obj_pause_object_3d</object>
-    </objects>
-    <objects name="Boss3">
-      <object>objects\obj_boss3</object>
+      <object>objects\obj_sign</object>
+      <object>objects\obj_box</object>
     </objects>
     <objects name="Menu">
       <object>objects\obj_select</object>
       <object>objects\obj_arrow_select</object>
       <object>objects\obj_title</object>
+      <object>objects\obj_menu</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Menu">
       <room>rooms\rm_title</room>
+      <room>rooms\rm_menu</room>
       <room>rooms\rm_select</room>
     </rooms>
     <rooms name="Boss 1">
@@ -148,6 +164,10 @@
     </rooms>
     <rooms name="Boss 2">
       <room>rooms\rm_boss2</room>
+    </rooms>
+    <rooms name="Boss 3">
+      <room>rooms\rm_boss3_corridor</room>
+      <room>rooms\rm_boss3</room>
     </rooms>
     <rooms name="Gameplay">
       <room>rooms\rm_variables</room>

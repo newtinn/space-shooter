@@ -50,7 +50,9 @@ alarm[0] = createTime;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x+irandom_range(-4,4),y+irandom_range(-4,4),obj_bubble);
+            <string>if (global.paused == false) {
+    instance_create(x+irandom_range(-8,8),y+irandom_range(-8,8),obj_bubble);
+}
 createTime = irandom_range(0,120);
 alarm[0] = createTime;
 </string>

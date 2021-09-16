@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 10;
+            <string>if (instance_number(obj_screenshake) &gt; 1) {
+    instance_destroy();
+}
+alarm[0] = 3;
 </string>
           </argument>
         </arguments>

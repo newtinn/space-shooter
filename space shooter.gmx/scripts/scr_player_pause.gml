@@ -11,6 +11,13 @@ if (global.paused == true) {
         instance_deactivate_object(obj_boss1);
         instance_deactivate_object(obj_boss1_col);
     }
+    if (instance_exists(obj_boss3)) {
+        boss3 = instance_create(obj_boss3.x,obj_boss3.y,obj_pause_object_3d);
+        boss3.sprite_index = obj_boss3.sprite_index;
+        boss3.image_angle = obj_boss3.image_angle;
+        boss3.depth = obj_boss3.depth;
+        instance_deactivate_object(obj_boss3);
+    }
 } else {
     instance_activate_all();
 }

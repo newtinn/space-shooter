@@ -151,7 +151,7 @@ if (str == messageNormal) &amp;&amp; (textShowTimer == 0) {
             <string>if (button1Colour == c_red) {
     if (instance_number(obj_fade) &lt; 1) {
         fade = instance_create(0,0,obj_fade);
-        fade.roomTo = "restart";
+        fade.roomTo = rm_variables;
     }
 }
 

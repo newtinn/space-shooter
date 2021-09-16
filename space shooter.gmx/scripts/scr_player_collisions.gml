@@ -17,11 +17,15 @@ if (room == rm_main) {
         x = room_width-70;
     }
     if (x > room_width-70) {
-        if (y < 296) {
-            y = 296;
-        }
-        if (y > 346) {
-            y = 346;
+        if (global.boss[0] == true) {
+            if (y < 296) {
+                y = 296;
+            }
+            if (y > 346) {
+                y = 346;
+            }
+        } else {
+            x = room_width-70;
         }
     }
     
@@ -117,6 +121,49 @@ if (room == rm_boss2) {
     }
     if (y < 78) {
         y = 78;
+    }
+    /*if (y > room_height-70) {
+        if (x < 280) || (x > 360) {
+            y = room_height-70;
+        }
+        if (x < 280) {
+            x = 280;
+        }
+        if (x > 360) {
+            x = 360;
+        }
+    }*/
+    if (y > room_height-70) && ((x < 288) || (x > 352)) {
+        y = room_height-70;
+    }
+    if (y > room_height-70) {
+        if (x < 290) {
+            x = 290;
+        }
+        if (x > 350) {
+            x = 350;
+        }
+    }
+}
+
+if (room == rm_boss3) {
+    if (x < 70) {
+        x = 70;
+    }
+    if (x > room_width-78) {
+        x = room_width-78;
+    }
+    if (y < 70) {
+        if (x > 288 && x < 352) {
+            if (x < 292) {
+                x = 292;
+            }
+            if (x > 348) {
+                x = 348;
+            }
+        } else {
+            y = 70;
+        }
     }
     if (y > room_height-70) {
         y = room_height-70;

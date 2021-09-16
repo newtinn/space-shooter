@@ -14,3 +14,11 @@ if (global.prevroom == "") && (room == rm_main) {
     x = room_width/2;
     y = room_height/2;
 }
+if (global.prevroom == rm_boss3_corridor) && (room == rm_boss2) {
+    x = 320;
+    y = 384;
+}
+if (global.prevroom == rm_boss3) && (room == rm_boss3_corridor) {
+    x = 320;
+    y = 416;
+}   

@@ -274,6 +274,18 @@ if (instance_exists(obj_boss2)) {
     draw_text_transformed(4, 4, text, scale, scale, 0);
 }
 
+if (instance_exists(obj_boss3)) {
+    draw_set_font(fnt_main);
+    draw_set_colour(c_white);
+    draw_set_halign(fa_left);
+    //draw_text(8,8,);
+    var text="BOSS HEALTH: "+string(global.boss3health);
+    var wantSize = 11; // height of text I want
+    var currSize = string_height(text);
+    var scale = wantSize / currSize;
+    draw_text_transformed(4, 4, text, scale, scale, 0);
+}
+
 // checking if paused
 if (global.paused == true) {
     draw_set_alpha(0.5);
@@ -282,11 +294,24 @@ if (global.paused == true) {
     draw_set_font(fnt_main);
     draw_set_colour(c_white);
     draw_set_halign(fa_center);
-    var text="paused#press escape to unpause";
+    var text="paused";
     var wantSize = 24; // height of text I want
     var currSize = string_height(text);
     var scale = wantSize / currSize;
-    draw_text_transformed(view_wport[0]/2, (view_hport[0]/2)-16, text, scale, scale, 0);
+    draw_text_transformed(view_wport[0]/2, (view_hport[0]/2)-32, text, scale, scale, 0);
+    
+    draw_set_font(fnt_main);
+    draw_set_colour(c_white);
+    draw_set_halign(fa_center);
+    var text="Back to game";
+    var text2="Restart";
+    var text3="Menu";
+    var wantSize = 8; // height of text I want
+    var currSize = string_height(text);
+    var scale = wantSize / currSize;
+    draw_text_transformed(view_wport[0]/2, (view_hport[0]/2), text, scale, scale, 0);
+    draw_text_transformed(view_wport[0]/2, (view_hport[0]/2)+12, text2, scale, scale, 0);
+    draw_text_transformed(view_wport[0]/2, (view_hport[0]/2)+24, text3, scale, scale, 0);
 }
 </string>
           </argument>

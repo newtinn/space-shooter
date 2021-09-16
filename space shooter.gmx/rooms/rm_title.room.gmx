@@ -10,24 +10,7 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code>randomize();
-global.playerColour[0] = c_white;
-global.playerColour[1] = c_blue;
-global.playerColour[2] = make_colour_rgb(255,85,85);
-global.playerColour[3] = c_purple;
-global.playerColour[4] = c_lime;
-global.playerColour[5] = c_yellow;
-global.playerColour[6] = make_colour_rgb(50,50,50);
-
-global.colour[0] = "white";
-global.colour[1] = "blue";
-global.colour[2] = "red";
-global.colour[3] = "purple";
-global.colour[4] = "lime";
-global.colour[5] = "yellow";
-global.colour[6] = "gray";
-
-global.myColour = 0;</code>
+  <code></code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

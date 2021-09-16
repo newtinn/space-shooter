@@ -74,6 +74,32 @@ if (room == rm_boss1) {
         image_index = image_number - 1;
     }
 }
+if (room == rm_main) {
+    if (global.bossDone[0] &lt; 1) {
+        image_index = image_number - 1;
+        image_speed = 0;    
+    } else {
+        instance_destroy();
+    }
+}
+
+if (room == rm_boss2) {
+    if (global.bossDone[1] &gt; 1) {
+        instance_destroy();
+    }
+    if (wayAnimation == "backwards") {
+        if (image_index == image_number - 1) {
+            instance_destroy();
+        }
+    }
+}
+
+if (room == rm_boss3) {
+    if (global.bossDone[2] == 1) {
+        wayAnimation = "backwards";
+        image_index = image_number - 1;
+    }
+}
 
 if (instance_exists(obj_fade)) {
     depth = 100;
@@ -102,6 +128,16 @@ if (instance_exists(obj_fade)) {
             <kind>1</kind>
             <string>if (room == rm_boss1) {
     other.y = 78;
+}
+if (room == rm_boss2) &amp;&amp; (x == 32) {
+    other.x = 70;
+}
+if (room == rm_boss2) &amp;&amp; (y == 416) {
+    other.y = room_height-70;
+}
+
+if (room == rm_boss3) &amp;&amp; (y &lt; 128) {
+    other.y = 70;
 }
 </string>
           </argument>
