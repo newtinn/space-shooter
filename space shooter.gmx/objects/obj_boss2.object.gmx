@@ -34,6 +34,15 @@ frame[5] = spr_boss2_3;
 frame[6] = spr_boss2_4;
 frame[7] = spr_boss2_3;
 
+frameNorm[0] = spr_boss2_gun_1;
+frameNorm[1] = spr_boss2_gun_2;
+frameNorm[2] = spr_boss2_gun_3;
+frameNorm[3] = spr_boss2_gun_2;
+frameNorm[4] = spr_boss2_gun_1;
+frameNorm[5] = spr_boss2_gun_4;
+frameNorm[6] = spr_boss2_gun_5;
+frameNorm[7] = spr_boss2_gun_4;
+
 frameNum = 0;
 walking = false;
 
@@ -162,13 +171,24 @@ if (global.paused == true) {
 //scr_temp_boss2();
 
 if (walking == true) {
-    frameNum += 0.5;
     
-    if (frameNum &gt; array_length_1d(frame)-1) {
-        frameNum = 0;
+    if (global.boss2health &gt; 0) {
+        frameNum += 0.5;
+    
+        if (frameNum &gt; array_length_1d(frame)-1) {
+            frameNum = 0;
+        }
+    
+        sprite_index = frame[floor(frameNum)];
+    } else {
+        frameNum += 0.5;
+    
+        if (frameNum &gt; array_length_1d(frameNorm)-1) {
+            frameNum = 0;
+        }
+    
+        sprite_index = frameNorm[floor(frameNum)];
     }
-    
-    sprite_index = frame[floor(frameNum)];
 }
 
 if (hit == true) {
@@ -230,14 +250,20 @@ if (puddleStep == true) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (other.objectFrom == obj_player) {
-    if (global.boss2health &gt; 0) {
-        hit = true;
-        global.boss2health -= 1;
-    } else {
-        hit = instance_create(other.x + lengthdir_x(2,other.image_angle),other.y + lengthdir_y(2,other.image_angle),obj_bullet_hit);
-        hit.image_angle = other.image_angle;
+            <string>if (instance_exists(obj_player)) {
+    if (other.objectFrom == obj_player) {
+        if (global.boss2health &gt; 0) {
+            hit = true;
+            global.boss2health -= 1;
+        } else {
+            hit = instance_create(other.x + lengthdir_x(2,other.image_angle),other.y + lengthdir_y(2,other.image_angle),obj_bullet_hit);
+            hit.image_angle = other.image_angle;
+        }
+        with (other) instance_destroy();
     }
+} else {
+    hit = instance_create(other.x + lengthdir_x(2,other.image_angle),other.y + lengthdir_y(2,other.image_angle),obj_bullet_hit);
+    hit.image_angle = other.image_angle;
     with (other) instance_destroy();
 }
 </string>

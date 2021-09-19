@@ -110,7 +110,7 @@ alarm[0] = 60;
             <kind>1</kind>
             <string>shooting = false;
 moveToPlayer = true;
-alarm[2] = 120;
+alarm[2] = 60;
 </string>
           </argument>
         </arguments>
@@ -230,16 +230,21 @@ if (global.boss3health &gt; 0) {
     }
 } else {
     global.boss[2] = true;
-    global.bossDone[2] = 1;
     speed = 0;
     sprite_index = spr_boss3_walking_0;
     walking = false;
     shooting = false;
 }
 
-if (global.boss[2] == true) {
+if (obj_boss3_tongue.visible == false) &amp;&amp; (global.boss3health == 0) {
+    death = instance_create(x,y,obj_boss3_death);
+    death.image_angle = image_angle;
+    instance_destroy();
+}
+
+if (global.bossDone[2] &gt;= 1) {
     global.boss3health = 0;
-    image_angle = 90;
+    instance_destroy();
 }
 
 // checking if hit by bullet
@@ -273,16 +278,50 @@ if (hit == true) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (other.objectFrom == obj_player) {
-    if (global.boss3health &gt; 0) {
-        hit = true;
-        global.boss3health -= 1;
-    } else {
-        hit = instance_create(other.x + lengthdir_x(2,other.image_angle),other.y + lengthdir_y(2,other.image_angle),obj_bullet_hit);
-        hit.image_angle = other.image_angle;
+            <string>if (instance_exists(obj_player)) {
+    if (other.objectFrom == obj_player) {
+        if (global.boss3health &gt; 0) {
+            hit = true;
+            global.boss3health -= 1;
+        } else {
+            hit = instance_create(other.x + lengthdir_x(2,other.image_angle),other.y + lengthdir_y(2,other.image_angle),obj_bullet_hit);
+            hit.image_angle = other.image_angle;
+        }
+        with (other) instance_destroy();
     }
+} else {
+    hit = instance_create(other.x + lengthdir_x(2,other.image_angle),other.y + lengthdir_y(2,other.image_angle),obj_bullet_hit);
+    hit.image_angle = other.image_angle;
     with (other) instance_destroy();
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// creating death animation
+anim = instance_create(obj_player.x,obj_player.y,obj_player_death);
+anim.image_angle = obj_player.image_angle;
+anim.direction = obj_player.direction;
+anim.depth = obj_player.depth;
+with (obj_player) instance_destroy();
 </string>
           </argument>
         </arguments>

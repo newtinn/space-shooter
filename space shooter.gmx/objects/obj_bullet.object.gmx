@@ -88,10 +88,46 @@ if (num &lt; 2) {
             <string>//scr_bullet_collisions();
 
 // checking if paused
-if (global.paused == true) {
-    speed = 0;
-} else {
-    speed = origSpeed;
+if (room != rm_cutscene) {
+    if (global.paused == true) {
+        speed = 0;
+    } else {
+        speed = origSpeed;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_player_cs">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (objectFrom != obj_player_cs) {
+    // creating death animation
+    anim = instance_create(obj_player_cs.x,obj_player_cs.y,obj_player_death);
+    anim.image_angle = obj_player_cs.image_angle;
+    anim.direction = obj_player_cs.direction;
+    anim.depth = obj_player_cs.depth;
+    with (obj_player_cs) instance_destroy();
+    
+    hit = instance_create(x + lengthdir_x(2,image_angle),y + lengthdir_y(2,image_angle),obj_bullet_hit);
+    hit.image_angle = image_angle;
+    with(self) instance_destroy();
 }
 </string>
           </argument>

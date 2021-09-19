@@ -11,13 +11,22 @@
         <sprite>sprites\spr_elephant_idle</sprite>
       </sprites>
       <sprites name="Boss">
-        <sprite>sprites\spr_boss2_0</sprite>
-        <sprite>sprites\spr_boss2_1</sprite>
-        <sprite>sprites\spr_boss2_2</sprite>
-        <sprite>sprites\spr_boss2_3</sprite>
-        <sprite>sprites\spr_boss2_4</sprite>
         <sprite>sprites\spr_boss2_shoot</sprite>
         <sprite>sprites\spr_boss2_head</sprite>
+        <sprites name="Walking with gun">
+          <sprite>sprites\spr_boss2_0</sprite>
+          <sprite>sprites\spr_boss2_1</sprite>
+          <sprite>sprites\spr_boss2_2</sprite>
+          <sprite>sprites\spr_boss2_3</sprite>
+          <sprite>sprites\spr_boss2_4</sprite>
+        </sprites>
+        <sprites name="Walking no gun">
+          <sprite>sprites\spr_boss2_gun_1</sprite>
+          <sprite>sprites\spr_boss2_gun_2</sprite>
+          <sprite>sprites\spr_boss2_gun_3</sprite>
+          <sprite>sprites\spr_boss2_gun_4</sprite>
+          <sprite>sprites\spr_boss2_gun_5</sprite>
+        </sprites>
       </sprites>
       <sprite>sprites\spr_puddle</sprite>
     </sprites>
@@ -64,6 +73,9 @@
         <sprite>sprites\spr_boss3_walking_2</sprite>
         <sprite>sprites\spr_boss3_walking_3</sprite>
         <sprite>sprites\spr_boss3_walking_4</sprite>
+      </sprites>
+      <sprites name="Death">
+        <sprite>sprites\spr_boss3_death_1</sprite>
       </sprites>
       <sprite>sprites\spr_tongue</sprite>
     </sprites>
@@ -124,6 +136,7 @@
       <object>objects\obj_boss3</object>
       <object>objects\obj_boss3_tongue</object>
       <object>objects\obj_boss3_trail</object>
+      <object>objects\obj_boss3_death</object>
     </objects>
     <objects name="Player">
       <object>objects\obj_player</object>
@@ -151,6 +164,11 @@
       <object>objects\obj_title</object>
       <object>objects\obj_menu</object>
     </objects>
+    <objects name="cutscene">
+      <object>objects\obj_player_cs</object>
+      <object>objects\obj_crewmates_cs</object>
+      <object>objects\obj_gun_cs</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Menu">
@@ -172,6 +190,7 @@
     <rooms name="Gameplay">
       <room>rooms\rm_variables</room>
       <room>rooms\rm_test</room>
+      <room>rooms\rm_cutscene</room>
       <room>rooms\rm_main</room>
     </rooms>
   </rooms>

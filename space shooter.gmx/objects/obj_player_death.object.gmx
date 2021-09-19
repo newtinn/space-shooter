@@ -86,6 +86,12 @@ if (instance_exists(obj_fade)) {
     image_alpha -= 0.01;
 }
 
+if (fadeRect &gt;= 1) {
+    if (room == rm_cutscene) {
+        room_goto(rm_main);
+    }
+}
+
 if (fadeRect &lt; 1) {
     fadeRect += 0.01;
 } else {
@@ -195,49 +201,51 @@ draw_rectangle(0,0,view_wport[0],view_hport[0],false);
 draw_set_alpha(textFade);
 draw_set_colour(c_white);
 
-// adding to text
-if (fadeRect == 1) &amp;&amp; (fadeRectTextTimer == 0) {
-    if (string_length(str) &lt; string_length(message)) {
-        if (textSpeed == 0) {
-            currentChar = string_char_at(message, count);
-            if (count &gt; 1) {
-                str = str+currentChar;
-            } else {
-                str = currentChar;
+if (room != rm_cutscene) {
+    // adding to text
+    if (fadeRect == 1) &amp;&amp; (fadeRectTextTimer == 0) {
+        if (string_length(str) &lt; string_length(message)) {
+            if (textSpeed == 0) {
+                currentChar = string_char_at(message, count);
+                if (count &gt; 1) {
+                    str = str+currentChar;
+                } else {
+                    str = currentChar;
+                }
+                count += 1;
             }
-            count += 1;
+            //show_debug_message(string(currentChar)+" --- "+string(count));
+        } else {
+            str = messageNormal;
         }
-        //show_debug_message(string(currentChar)+" --- "+string(count));
-    } else {
-        str = messageNormal;
     }
-}
-
-// draw the text
-draw_set_font(fnt_main);
-draw_set_halign(fa_center);
-var text = message;
-var wantSize = 32; // height of text I want
-var currSize = string_height(text);
-var scale = wantSize / currSize;
-draw_set_colour(c_white);
-draw_text_transformed(view_wport[0]/2, TitleY, str, scale, scale, 0);
-
-// buttons
-var text2 = "restart";
-var text3 = "menu";
-var wantSize2 = 8; // height of text I want
-var currSize2 = string_height(text2);
-var scale2 = wantSize2 / currSize2;
-var currSize3 = string_height(text3);
-var scale3 = wantSize2 / currSize3;
-
-if (str == messageNormal) &amp;&amp; (textShowTimer == 0) {
+    
+    // draw the text
+    draw_set_font(fnt_main);
     draw_set_halign(fa_center);
-    draw_set_colour(button1Colour);
-    draw_text_transformed(view_wport[0]/2, TitleY+42, text2, scale2, scale2, 0);
-    draw_set_colour(button2Colour);
-    draw_text_transformed(view_wport[0]/2, TitleY+58, text3, scale3, scale3, 0);
+    var text = message;
+    var wantSize = 32; // height of text I want
+    var currSize = string_height(text);
+    var scale = wantSize / currSize;
+    draw_set_colour(c_white);
+    draw_text_transformed(view_wport[0]/2, TitleY, str, scale, scale, 0);
+    
+    // buttons
+    var text2 = "restart";
+    var text3 = "menu";
+    var wantSize2 = 8; // height of text I want
+    var currSize2 = string_height(text2);
+    var scale2 = wantSize2 / currSize2;
+    var currSize3 = string_height(text3);
+    var scale3 = wantSize2 / currSize3;
+    
+    if (str == messageNormal) &amp;&amp; (textShowTimer == 0) {
+        draw_set_halign(fa_center);
+        draw_set_colour(button1Colour);
+        draw_text_transformed(view_wport[0]/2, TitleY+42, text2, scale2, scale2, 0);
+        draw_set_colour(button2Colour);
+        draw_text_transformed(view_wport[0]/2, TitleY+58, text3, scale3, scale3, 0);
+    }
 }
 </string>
           </argument>
