@@ -203,15 +203,17 @@ if (global.boss1health &lt;= 0) {
     obj_door.image_index = 0;
 
     // creating death animation
-    anim = instance_create(x,y,obj_boss1_death);
-    anim.image_angle = image_angle;
-    anim.depth = depth;
-    global.boss[0] = true;
-    global.bossDone[0] += 1;
-    
-    if (global.bossDone[0] &gt; 1) {
-        anim.currentFrameNum = 3;
+    if (global.bossDone[0] &lt;= 1) { 
+        anim = instance_create(x,y,obj_boss1_death);
+        anim.image_angle = image_angle;
+        anim.depth = depth;
+        global.boss[0] = true;
+        
+        if (global.bossDone[0] &gt; 1) {
+            anim.currentFrameNum = 3;
+        }
     }
+    global.bossDone[0] += 1;
     
     instance_destroy();
 } else {

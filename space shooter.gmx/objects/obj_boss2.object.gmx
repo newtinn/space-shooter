@@ -252,6 +252,15 @@ if (puddleStep == true) {
             <kind>1</kind>
             <string>if (instance_exists(obj_player)) {
     if (other.objectFrom == obj_player) {
+        if (global.boss2health == 1) {
+            if (instance_number(obj_gun_display) &lt; 1) {
+                gun = instance_create(x,y,obj_gun_display);
+                gun.image_angle = -10;
+            }
+            hit = true;
+            global.boss2health = 0;
+        }
+    
         if (global.boss2health &gt; 0) {
             hit = true;
             global.boss2health -= 1;

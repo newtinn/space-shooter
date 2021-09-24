@@ -49,6 +49,8 @@ messageNormal = "game over#you died";
 str = "";
 textSpeed = 0;
 textShowTimer = 50;
+
+cause = "";
 </string>
           </argument>
         </arguments>
@@ -95,6 +97,13 @@ if (fadeRect &gt;= 1) {
 if (fadeRect &lt; 1) {
     fadeRect += 0.01;
 } else {
+    if (cause == "restart") {
+        room_goto(rm_variables);
+    }
+    if (cause == "menu") {
+        room_goto(rm_menu);
+    }
+
     if (fadeRectTextTimer &gt; 0) {
         fadeRectTextTimer -= 1;
     }

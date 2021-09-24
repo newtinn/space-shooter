@@ -50,6 +50,7 @@
       <sprite>sprites\spr_bullet</sprite>
       <sprite>sprites\spr_bullet_hit</sprite>
       <sprite>sprites\spr_gun</sprite>
+      <sprite>sprites\spr_gun2</sprite>
     </sprites>
     <sprites name="Boss1">
       <sprite>sprites\spr_boss1</sprite>
@@ -131,6 +132,7 @@
       <object>objects\obj_boss2</object>
       <object>objects\obj_puddle</object>
       <object>objects\obj_bubble</object>
+      <object>objects\obj_gun_display</object>
     </objects>
     <objects name="Boss3">
       <object>objects\obj_boss3</object>

@@ -30,6 +30,10 @@ currentFrame[1] = spr_boss1_death_2;
 currentFrame[2] = spr_boss1_death_3;
 currentFrame[3] = spr_boss1_death_4;
 currentFrameNum = 0;
+
+if (global.bossDone[0] &gt; 1) {
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

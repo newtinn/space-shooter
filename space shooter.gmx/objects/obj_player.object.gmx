@@ -50,6 +50,32 @@ scr_player_onload_room();
 
 // pausing
 global.paused = false;
+backtogameCol = c_white; // colours for buttons
+restartCol = c_white;
+menuCol = c_white;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.paused = false;
 </string>
           </argument>
         </arguments>
@@ -208,6 +234,58 @@ instance_destroy();
         </arguments>
       </action>
     </event>
+    <event eventtype="6" enumb="53">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (backtogameCol == c_red) {
+    alarm[0] = 2;
+}
+
+if (restartCol == c_red) {
+    with(obj_gun) instance_destroy();
+
+    // creating death animation
+    anim = instance_create(obj_player.x,obj_player.y,obj_player_death);
+    anim.image_angle = obj_player.image_angle;
+    anim.direction = obj_player.direction;
+    anim.depth = obj_player.depth;
+    anim.cause = "restart";
+    with (obj_player) instance_destroy();
+
+    global.paused = false;
+}
+
+
+if (menuCol == c_red) {
+    with(obj_gun) instance_destroy();
+
+    // creating death animation
+    anim = instance_create(obj_player.x,obj_player.y,obj_player_death);
+    anim.image_angle = obj_player.image_angle;
+    anim.direction = obj_player.direction;
+    anim.depth = obj_player.depth;
+    anim.cause = "menu";
+    with (obj_player) instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="7" enumb="5">
       <action>
         <libid>1</libid>
@@ -301,7 +379,6 @@ if (global.paused == true) {
     draw_text_transformed(view_wport[0]/2, (view_hport[0]/2)-32, text, scale, scale, 0);
     
     draw_set_font(fnt_main);
-    draw_set_colour(c_white);
     draw_set_halign(fa_center);
     var text="Back to game";
     var text2="Restart";
@@ -309,8 +386,11 @@ if (global.paused == true) {
     var wantSize = 8; // height of text I want
     var currSize = string_height(text);
     var scale = wantSize / currSize;
+    draw_set_colour(backtogameCol);
     draw_text_transformed(view_wport[0]/2, (view_hport[0]/2), text, scale, scale, 0);
+    draw_set_colour(restartCol);
     draw_text_transformed(view_wport[0]/2, (view_hport[0]/2)+12, text2, scale, scale, 0);
+    draw_set_colour(menuCol);
     draw_text_transformed(view_wport[0]/2, (view_hport[0]/2)+24, text3, scale, scale, 0);
 }
 </string>

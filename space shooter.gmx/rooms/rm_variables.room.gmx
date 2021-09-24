@@ -18,6 +18,11 @@ global.bossDone[0] = 0; // checking if done before
 global.bossDone[1] = 0;
 global.bossDone[2] = 0;
 
+global.gun = 0;
+global.gunx = 0;
+global.guny = 0;
+global.gunroom = 0;
+
 room_goto(rm_cutscene);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>

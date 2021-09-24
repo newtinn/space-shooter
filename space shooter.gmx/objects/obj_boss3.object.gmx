@@ -282,7 +282,12 @@ if (hit == true) {
     if (other.objectFrom == obj_player) {
         if (global.boss3health &gt; 0) {
             hit = true;
-            global.boss3health -= 1;
+            if (global.gun == 0) {
+                global.boss3health -= 1;
+            }
+            if (global.gun == 1) {
+                global.boss3health -= 2;
+            }
         } else {
             hit = instance_create(other.x + lengthdir_x(2,other.image_angle),other.y + lengthdir_y(2,other.image_angle),obj_bullet_hit);
             hit.image_angle = other.image_angle;
