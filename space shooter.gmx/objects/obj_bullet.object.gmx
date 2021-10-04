@@ -101,6 +101,37 @@ if (room != rm_cutscene) {
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="obj_boss4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hit = instance_create(x + lengthdir_x(2,image_angle),y + lengthdir_y(2,image_angle),obj_bullet_hit);
+hit.image_angle = image_angle;
+with(self) instance_destroy()
+if (objectFrom == obj_player) {
+    if (global.boss4health &gt; 0) {
+        obj_boss4.hit = true;
+        global.boss4health -= 1;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="obj_player_cs">
       <action>
         <libid>1</libid>

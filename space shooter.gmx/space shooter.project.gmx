@@ -6,30 +6,6 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprites name="Boss2">
-      <sprites name="Elephant">
-        <sprite>sprites\spr_elephant_idle</sprite>
-      </sprites>
-      <sprites name="Boss">
-        <sprite>sprites\spr_boss2_shoot</sprite>
-        <sprite>sprites\spr_boss2_head</sprite>
-        <sprites name="Walking with gun">
-          <sprite>sprites\spr_boss2_0</sprite>
-          <sprite>sprites\spr_boss2_1</sprite>
-          <sprite>sprites\spr_boss2_2</sprite>
-          <sprite>sprites\spr_boss2_3</sprite>
-          <sprite>sprites\spr_boss2_4</sprite>
-        </sprites>
-        <sprites name="Walking no gun">
-          <sprite>sprites\spr_boss2_gun_1</sprite>
-          <sprite>sprites\spr_boss2_gun_2</sprite>
-          <sprite>sprites\spr_boss2_gun_3</sprite>
-          <sprite>sprites\spr_boss2_gun_4</sprite>
-          <sprite>sprites\spr_boss2_gun_5</sprite>
-        </sprites>
-      </sprites>
-      <sprite>sprites\spr_puddle</sprite>
-    </sprites>
     <sprites name="Player">
       <sprites name="Walking">
         <sprite>sprites\spr_player_0</sprite>
@@ -52,33 +28,9 @@
       <sprite>sprites\spr_gun</sprite>
       <sprite>sprites\spr_gun2</sprite>
     </sprites>
-    <sprites name="Boss1">
-      <sprite>sprites\spr_boss1</sprite>
-      <sprite>sprites\spr_boss1_col</sprite>
-      <sprite>sprites\spr_boss1_trail</sprite>
-      <sprites name="Death">
-        <sprite>sprites\spr_boss1_death_1</sprite>
-        <sprite>sprites\spr_boss1_death_2</sprite>
-        <sprite>sprites\spr_boss1_death_3</sprite>
-        <sprite>sprites\spr_boss1_death_4</sprite>
-      </sprites>
-    </sprites>
     <sprites name="Door">
       <sprite>sprites\spr_door_horizontal_close</sprite>
       <sprite>sprites\spr_door_horizontal_open</sprite>
-    </sprites>
-    <sprites name="Boss3">
-      <sprites name="Walking">
-        <sprite>sprites\spr_boss3_walking_0</sprite>
-        <sprite>sprites\spr_boss3_walking_1</sprite>
-        <sprite>sprites\spr_boss3_walking_2</sprite>
-        <sprite>sprites\spr_boss3_walking_3</sprite>
-        <sprite>sprites\spr_boss3_walking_4</sprite>
-      </sprites>
-      <sprites name="Death">
-        <sprite>sprites\spr_boss3_death_1</sprite>
-      </sprites>
-      <sprite>sprites\spr_tongue</sprite>
     </sprites>
     <sprites name="misc">
       <sprite>sprites\spr_wall</sprite>
@@ -90,6 +42,78 @@
       <sprite>sprites\spr_cursor</sprite>
       <sprite>sprites\spr_sign</sprite>
       <sprite>sprites\spr_box</sprite>
+    </sprites>
+    <sprites name="Bosses">
+      <sprites name="Boss3">
+        <sprites name="Walking">
+          <sprite>sprites\spr_boss3_walking_0</sprite>
+          <sprite>sprites\spr_boss3_walking_1</sprite>
+          <sprite>sprites\spr_boss3_walking_2</sprite>
+          <sprite>sprites\spr_boss3_walking_3</sprite>
+          <sprite>sprites\spr_boss3_walking_4</sprite>
+        </sprites>
+        <sprites name="Death">
+          <sprite>sprites\spr_boss3_death_1</sprite>
+        </sprites>
+        <sprite>sprites\spr_tongue</sprite>
+      </sprites>
+      <sprites name="Boss2">
+        <sprites name="Elephant">
+          <sprite>sprites\spr_elephant_idle</sprite>
+        </sprites>
+        <sprites name="Boss">
+          <sprite>sprites\spr_boss2_shoot</sprite>
+          <sprite>sprites\spr_boss2_head</sprite>
+          <sprites name="Walking with gun">
+            <sprite>sprites\spr_boss2_0</sprite>
+            <sprite>sprites\spr_boss2_1</sprite>
+            <sprite>sprites\spr_boss2_2</sprite>
+            <sprite>sprites\spr_boss2_3</sprite>
+            <sprite>sprites\spr_boss2_4</sprite>
+          </sprites>
+          <sprites name="Walking no gun">
+            <sprite>sprites\spr_boss2_gun_1</sprite>
+            <sprite>sprites\spr_boss2_gun_2</sprite>
+            <sprite>sprites\spr_boss2_gun_3</sprite>
+            <sprite>sprites\spr_boss2_gun_4</sprite>
+            <sprite>sprites\spr_boss2_gun_5</sprite>
+          </sprites>
+        </sprites>
+        <sprite>sprites\spr_puddle</sprite>
+      </sprites>
+      <sprites name="Boss1">
+        <sprite>sprites\spr_boss1</sprite>
+        <sprite>sprites\spr_boss1_col</sprite>
+        <sprite>sprites\spr_boss1_trail</sprite>
+        <sprites name="Death">
+          <sprite>sprites\spr_boss1_death_1</sprite>
+          <sprite>sprites\spr_boss1_death_2</sprite>
+          <sprite>sprites\spr_boss1_death_3</sprite>
+          <sprite>sprites\spr_boss1_death_4</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="Boss4">
+        <sprites name="Walk">
+          <sprite>sprites\spr_boss4_walk_0</sprite>
+          <sprite>sprites\spr_boss4_walk_1</sprite>
+          <sprite>sprites\spr_boss4_walk_2</sprite>
+          <sprite>sprites\spr_boss4_walk_3</sprite>
+          <sprite>sprites\spr_boss4_walk_4</sprite>
+        </sprites>
+        <sprites name="Smash">
+          <sprite>sprites\spr_boss4_smash_0</sprite>
+          <sprite>sprites\spr_boss4_smash_1</sprite>
+          <sprite>sprites\spr_boss4_smash_2</sprite>
+          <sprite>sprites\spr_boss4_smash_3</sprite>
+          <sprite>sprites\spr_boss4_smash_4</sprite>
+          <sprite>sprites\spr_boss4_smash_5</sprite>
+          <sprite>sprites\spr_boss4_smash_6</sprite>
+          <sprite>sprites\spr_boss4_smash_7</sprite>
+        </sprites>
+        <sprites name="Turret">
+          <sprite>sprites\spr_turret</sprite>
+        </sprites>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -105,6 +129,7 @@
       <script>scripts\draw_self_3d_player.gml</script>
       <script>scripts\scr_player_boss1.gml</script>
       <script>scripts\scr_player_pause.gml</script>
+      <script>scripts\scr_player_boss4.gml</script>
     </scripts>
     <scripts name="Draw 3D">
       <script>scripts\draw_self_3d.gml</script>
@@ -170,6 +195,10 @@
       <object>objects\obj_player_cs</object>
       <object>objects\obj_crewmates_cs</object>
       <object>objects\obj_gun_cs</object>
+    </objects>
+    <objects name="Boss4">
+      <object>objects\obj_boss4</object>
+      <object>objects\obj_turret</object>
     </objects>
   </objects>
   <rooms name="rooms">

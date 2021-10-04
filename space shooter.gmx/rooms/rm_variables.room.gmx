@@ -23,7 +23,7 @@ global.gunx = 0;
 global.guny = 0;
 global.gunroom = 0;
 
-room_goto(rm_cutscene);</code>
+room_goto(rm_test);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

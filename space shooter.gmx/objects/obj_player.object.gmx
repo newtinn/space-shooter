@@ -163,6 +163,9 @@ if (room == rm_boss1) {
     scr_player_boss1();
 }
 
+// collisions with boss 4
+scr_player_boss4();
+
 // making footprints
 if (puddleStep == true) {
     if (puddleStepNum &lt; 200) {
