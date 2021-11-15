@@ -28,6 +28,10 @@
             <string>bossExists = false;
 wayAnimation = "forward";
 sprite_index = spr_door_horizontal_open;
+
+if (global.boss[2] == true) {
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -50,21 +54,23 @@ sprite_index = spr_door_horizontal_open;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (wayAnimation == "forward") {
-    sprite_index = spr_door_horizontal_open;
-    if (image_index &lt; image_number - 1) {
-        image_speed = 0.15;
-    } else {
-        image_index = image_number - 1;
+            <string>if (room != rm_boss3) {
+    if (wayAnimation == "forward") {
+        sprite_index = spr_door_horizontal_open;
+        if (image_index &lt; image_number - 1) {
+            image_speed = 0.15;
+        } else {
+            image_index = image_number - 1;
+        }
     }
-}
-
-if (wayAnimation == "backwards") {
-    sprite_index = spr_door_horizontal_close;
-    if (image_index &lt; image_number - 1) {
-        image_speed = 0.15;
-    } else {
-        image_index = image_number - 1;
+    
+    if (wayAnimation == "backwards") {
+        sprite_index = spr_door_horizontal_close;
+        if (image_index &lt; image_number - 1) {
+            image_speed = 0.15;
+        } else {
+            image_index = image_number - 1;
+        }
     }
 }
 
@@ -95,9 +101,23 @@ if (room == rm_boss2) {
 }
 
 if (room == rm_boss3) {
-    if (global.bossDone[2] == 1) {
-        wayAnimation = "backwards";
-        image_index = image_number - 1;
+
+    if (global.boss[2] == true) {
+        sprite_index = spr_door_horizontal_close;
+        if (image_index &lt; image_number - 1) {
+            image_speed = 0.15;
+        } else {
+            image_index = image_number - 1;
+        }
+    }
+    
+    if (global.boss[2] == false) {
+        sprite_index = spr_door_horizontal_open;
+        if (image_index &lt; image_number - 1) {
+            image_speed = 0.15;
+        } else {
+            image_index = image_number - 1;
+        }
     }
 }
 

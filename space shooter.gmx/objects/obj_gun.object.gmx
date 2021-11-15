@@ -84,7 +84,11 @@
         if (distance_to_point(mouse_x,mouse_y) &lt; 7) {
             visible = false;
         } else {
-            visible = true;
+            if (obj_player.roll == false) {
+                visible = true;
+            } else {
+                visible = false;
+            }
         }
     }
 

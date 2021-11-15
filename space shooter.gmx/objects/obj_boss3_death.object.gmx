@@ -25,9 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>darkAlpha = 0;
+            <string>/*if (instance_exists(obj_door)) {
+    obj_door.wayAnimation = "backwards";
+}*/
+
+darkAlpha = 0;
 darkAlphaDone = false;
 global.bossDone[2] += 1;
+global.doors = 1;
 </string>
           </argument>
         </arguments>

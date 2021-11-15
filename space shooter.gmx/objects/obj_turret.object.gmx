@@ -25,7 +25,24 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 120;
+            <string>frame[0] = spr_turret;
+frame[1] = spr_turret_0;
+frame[2] = spr_turret_1;
+frame[3] = spr_turret_2;
+frame[4] = spr_turret_3;
+frame[5] = spr_turret_4;
+frame[5] = spr_turret_5;
+frame[6] = spr_turret_6;
+frame[7] = spr_turret_7;
+frame[8] = spr_turret_8;
+frameNum = 0;
+
+alarm[0] = 120;
+
+hit = false;
+hitCountdown = 0;
+
+dead = false;
 </string>
           </argument>
         </arguments>
@@ -50,18 +67,20 @@
             <kind>1</kind>
             <string>/// Shooting bullet
 
-// creating the bullet
-if (global.paused == false) {
-    bullet = instance_create(x,y - 6,obj_bullet);
-    bullet.objectFrom = obj_boss2;
-    bullet.direction = direction;
-    bullet.direction += irandom_range(-2,2);
-    bullet.image_angle = bullet.direction;
-    bullet.speed = 12.5;
-    bullet.origSpeed = 12.5;
+if (dead == false) &amp;&amp; (instance_exists(obj_player)) {
+    // creating the bullet
+    if (global.paused == false) {
+        bullet = instance_create(x,y - 6,obj_bullet);
+        bullet.objectFrom = obj_boss2;
+        bullet.direction = direction;
+        bullet.direction += irandom_range(-2,2);
+        bullet.image_angle = bullet.direction;
+        bullet.speed = 12.5;
+        bullet.origSpeed = 12.5;
+    }
+    
+    alarm[0] = irandom_range(60,120);
 }
-
-alarm[0] = 90;
 </string>
           </argument>
         </arguments>
@@ -85,10 +104,56 @@ alarm[0] = 90;
           <argument>
             <kind>1</kind>
             <string>if (instance_exists(obj_player)) {
-    direction = point_direction(x,y,obj_player.x,obj_player.y);
-    image_angle = direction;
+    if (dead == false) {
+        direction = point_direction(x,y,obj_player.x,obj_player.y);
+        image_angle = direction;
+    } else {
+        frameNum += 0.15;  
+        if (frameNum &gt; 8) {
+            frameNum = 8;
+        }
+        sprite_index = frame[frameNum];
+    }
 }
 
+if (hit == true) {
+    hitCountdown += 1;
+    
+    if (hitCountdown &gt;= 10) {
+        hitCountdown = 0;
+        hit = false;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_bullet">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (dead == false) {
+    if (other.objectFrom == obj_player) {
+        hit = instance_create(other.x + lengthdir_x(2,other.image_angle),other.y + lengthdir_y(2,other.image_angle),obj_bullet_hit);
+        hit.image_angle = other.image_angle;
+        dead = true;
+        with (other) instance_destroy();
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -112,6 +177,18 @@ alarm[0] = 90;
           <argument>
             <kind>1</kind>
             <string>draw_self_3d();
+
+if (hit == true) {
+    for (var _i=0; _i&lt;image_number; _i++) {
+        draw_sprite_ext(sprite_index, _i, x, y-_i, image_xscale, image_yscale, image_angle, c_red, image_alpha);
+    }
+}
+
+/*if (dead == true) {
+    for (var _i=0; _i&lt;image_number; _i++) {
+        draw_sprite_ext(sprite_index, _i, x, y-_i, image_xscale, image_yscale, image_angle, c_black, image_alpha);
+    }
+}*/
 </string>
           </argument>
         </arguments>

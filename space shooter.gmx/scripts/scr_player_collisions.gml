@@ -148,7 +148,18 @@ if (room == rm_boss2) {
 
 if (room == rm_boss3) {
     if (x < 70) {
-        x = 70;
+        if (y > 224 && y < 288) {
+            if (y < 230) {
+                y = 230;
+            }
+            if (y > 282) {
+                y = 282;
+            }
+        } else {
+            if (x < 70) {
+                x = 70;
+            }
+        }
     }
     if (x > room_width-78) {
         x = room_width-78;
@@ -167,5 +178,32 @@ if (room == rm_boss3) {
     }
     if (y > room_height-70) {
         y = room_height-70;
+    }
+}
+
+// boss 4
+if (room == rm_boss4) {
+    if (y < 70) {
+        y = 70;
+    }
+    if (y > room_height-70) {
+        y = room_height-70;
+    }
+    if (x < 70) || (x > room_width-70) {
+        if (y > 224 && y < 288) {
+            if (y < 230) {
+                y = 230;
+            }
+            if (y > 282) {
+                y = 282;
+            }
+        } else {
+            if (x < 70) {
+                x = 70;
+            }
+            if (x > room_width-70) {
+                x = room_width-70;
+            }
+        }
     }
 }

@@ -21,4 +21,8 @@ if (global.prevroom == rm_boss3_corridor) && (room == rm_boss2) {
 if (global.prevroom == rm_boss3) && (room == rm_boss3_corridor) {
     x = 320;
     y = 416;
-}   
+}
+if (global.prevroom == rm_boss4) && (room == rm_boss3) {
+    x = 64;
+    y = 256;
+}

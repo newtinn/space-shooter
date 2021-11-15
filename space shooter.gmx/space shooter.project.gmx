@@ -21,6 +21,13 @@
         <sprite>sprites\spr_player_gmo_4</sprite>
         <sprite>sprites\spr_player_gmo_5</sprite>
       </sprites>
+      <sprites name="Roll">
+        <sprite>sprites\spr_player_roll_0</sprite>
+        <sprite>sprites\spr_player_roll_1</sprite>
+        <sprite>sprites\spr_player_roll_2</sprite>
+        <sprite>sprites\spr_player_roll_3</sprite>
+        <sprite>sprites\spr_player_roll_4</sprite>
+      </sprites>
     </sprites>
     <sprites name="Gun">
       <sprite>sprites\spr_bullet</sprite>
@@ -112,6 +119,22 @@
         </sprites>
         <sprites name="Turret">
           <sprite>sprites\spr_turret</sprite>
+          <sprite>sprites\spr_turret_0</sprite>
+          <sprite>sprites\spr_turret_1</sprite>
+          <sprite>sprites\spr_turret_2</sprite>
+          <sprite>sprites\spr_turret_3</sprite>
+          <sprite>sprites\spr_turret_4</sprite>
+          <sprite>sprites\spr_turret_5</sprite>
+          <sprite>sprites\spr_turret_6</sprite>
+          <sprite>sprites\spr_turret_7</sprite>
+          <sprite>sprites\spr_turret_8</sprite>
+        </sprites>
+        <sprites name="Stop">
+          <sprite>sprites\spr_boss4_gmo_0</sprite>
+          <sprite>sprites\spr_boss4_gmo_1</sprite>
+          <sprite>sprites\spr_boss4_gmo_2</sprite>
+          <sprite>sprites\spr_boss4_gmo_3</sprite>
+          <sprite>sprites\spr_boss4_gmo_4</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -130,6 +153,7 @@
       <script>scripts\scr_player_boss1.gml</script>
       <script>scripts\scr_player_pause.gml</script>
       <script>scripts\scr_player_boss4.gml</script>
+      <script>scripts\scr_player_roll.gml</script>
     </scripts>
     <scripts name="Draw 3D">
       <script>scripts\draw_self_3d.gml</script>
@@ -140,6 +164,7 @@
       <script>scripts\scr_boss1_turn.gml</script>
       <script>scripts\scr_boss2_ai.gml</script>
       <script>scripts\scr_temp_boss2.gml</script>
+      <script>scripts\scr_boss4_ai.gml</script>
     </scripts>
     <script>scripts\scr_player_colour.gml</script>
   </scripts>
@@ -217,6 +242,9 @@
     <rooms name="Boss 3">
       <room>rooms\rm_boss3_corridor</room>
       <room>rooms\rm_boss3</room>
+    </rooms>
+    <rooms name="Boss 4">
+      <room>rooms\rm_boss4</room>
     </rooms>
     <rooms name="Gameplay">
       <room>rooms\rm_variables</room>

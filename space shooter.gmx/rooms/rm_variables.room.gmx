@@ -14,16 +14,18 @@
 global.boss[0] = false;
 global.boss[1] = false;
 global.boss[2] = false;
+global.boss[3] = false;
 global.bossDone[0] = 0; // checking if done before
 global.bossDone[1] = 0;
 global.bossDone[2] = 0;
+global.bossDone[3] = 0;
 
 global.gun = 0;
 global.gunx = 0;
 global.guny = 0;
 global.gunroom = 0;
 
-room_goto(rm_test);</code>
+room_goto(rm_cutscene);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

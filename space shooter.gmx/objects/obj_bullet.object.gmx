@@ -118,13 +118,42 @@ if (room != rm_cutscene) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hit = instance_create(x + lengthdir_x(2,image_angle),y + lengthdir_y(2,image_angle),obj_bullet_hit);
-hit.image_angle = image_angle;
-with(self) instance_destroy()
-if (objectFrom == obj_player) {
+            <string>if (objectFrom == obj_player) {
     if (global.boss4health &gt; 0) {
-        obj_boss4.hit = true;
-        global.boss4health -= 1;
+        // making number to see if repel off
+        var repel = irandom_range(1,10);
+        
+        if (repel &lt;= 8) {
+            if (global.boss4health &gt; 0) {
+                obj_boss4.hit = true;
+                if (global.gun == 0) {
+                    global.boss4health -= 1;
+                }
+                if (global.gun == 1) {
+                    global.boss4health -= 2;
+                }
+                
+                hit = instance_create(x + lengthdir_x(2,image_angle),y + lengthdir_y(2,image_angle),obj_bullet_hit);
+                hit.image_angle = image_angle;
+                with(self) instance_destroy();
+            }
+        } else {
+            bullet = instance_create(x,y,obj_bullet);
+            bullet.direction = direction-180;
+            bullet.direction = bullet.direction+irandom_range(-30,30);
+            bullet.image_angle = bullet.direction;
+            bullet.speed = 12.5;
+            bullet.origSpeed = 12.5;
+            
+            with(self) instance_destroy();
+        }
+        
+        // making the boss bounce back a bit
+        obj_boss4.back = true;
+    } else {
+        hit = instance_create(x,y,obj_bullet_hit);
+        hit.image_angle = image_angle;
+        instance_destroy();
     }
 }
 </string>
@@ -192,6 +221,31 @@ instance_destroy();
       </action>
     </event>
     <event eventtype="4" ename="obj_wall">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hit = instance_create(x,y,obj_bullet_hit);
+hit.image_angle = image_angle;
+instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_player_death">
       <action>
         <libid>1</libid>
         <id>603</id>
