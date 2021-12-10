@@ -70,6 +70,8 @@ backNum = 0;
 backAngle = "";
 back = false;
 
+hitNum = 0;
+
 alarm[0] = 60;
 </string>
           </argument>

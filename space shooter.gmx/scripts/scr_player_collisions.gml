@@ -146,34 +146,55 @@ if (room == rm_boss2) {
     }
 }
 
+// boss 3 corridor
+if (room == rm_boss3_corridor) {
+    if (x < 292) {
+        x = 292;
+    }
+    if (x > 348) {
+        x = 348;
+    }
+}
+
+// boss 3
 if (room == rm_boss3) {
     if (x < 70) {
-        if (y > 224 && y < 288) {
-            if (y < 230) {
-                y = 230;
-            }
-            if (y > 282) {
-                y = 282;
+        if (obj_door.sprite_index == spr_door_horizontal_close) {
+            if (y > 224 && y < 288) {
+                if (y < 230) {
+                    y = 230;
+                }
+                if (y > 282) {
+                    y = 282;
+                }
+            } else {
+                if (x < 70) {
+                    x = 70;
+                }
             }
         } else {
-            if (x < 70) {
-                x = 70;
-            }
+            x = 70;
         }
     }
     if (x > room_width-78) {
         x = room_width-78;
     }
     if (y < 70) {
-        if (x > 288 && x < 352) {
-            if (x < 292) {
-                x = 292;
-            }
-            if (x > 348) {
-                x = 348;
-            }
+        if (obj_door.sprite_index == spr_door_horizontal_close) {
+            if (x > 288 && x < 352) {
+                if (x < 292) {
+                    x = 292;
+                }
+                if (x > 348) {
+                    x = 348;
+                }
+            } else {
+                y = 70;
+            }  
         } else {
-            y = 70;
+            if (obj_door.sprite_index == spr_door_horizontal_open) && (obj_door.image_index > 5) {
+                y = 70;
+            }
         }
     }
     if (y > room_height-70) {

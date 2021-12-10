@@ -109,7 +109,7 @@ if (fadeRect &lt; 1) {
     }
 
     if (str != messageNormal) {
-        textSpeed += 1;
+        textSpeed += 1.5;
         if (textSpeed &gt; 15) {
             textSpeed = 0;
         }

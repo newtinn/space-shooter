@@ -58,6 +58,11 @@ global.boss3health = 100; // default: 100
 hit = false;
 hitCountdown = 0;
 
+global.boss3lastx = x;
+global.boss3lasty = y;
+global.boss3angle = image_angle;
+global.boss3sprite = sprite_index;
+
 alarm[0] = 180;
 </string>
           </argument>
@@ -81,7 +86,12 @@ alarm[0] = 180;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (instance_exists(obj_boss3_tongue)) {
+            <string>/*global.boss3lastx = x;
+global.boss3lasty = y;
+global.boss3angle = image_angle;
+global.boss3sprite = sprite_index;*/
+
+if (instance_exists(obj_boss3_tongue)) {
     with (obj_boss3_tongue) instance_destroy();
 }
 </string>
@@ -186,7 +196,12 @@ alarm[1] = 120;
             <kind>1</kind>
             <string>/// Step event
 
-scr_turn_object_3d();
+//scr_turn_object_3d();
+
+global.boss3lastx = x;
+global.boss3lasty = y;
+global.boss3angle = image_angle;
+global.boss3sprite = sprite_index;
 
 /*if (pointMove == false) {
     move_towards_point(pointX,pointY,1);
@@ -251,6 +266,11 @@ if (global.boss3health &gt; 0) {
                     speed = 0;
                 }
             }
+        } else {
+            speed = 0;
+            sprite_index = spr_boss3_walking_0;
+            shooting = false;
+            walking = false;
         }
     }
 } else {
@@ -274,6 +294,8 @@ if (global.bossDone[2] &gt;= 1) {
     global.boss3health = 0;
     instance_destroy();
 }
+
+show_debug_message(global.bossDone[2]);
 
 // checking if hit by bullet
 if (hit == true) {

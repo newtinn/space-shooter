@@ -300,8 +300,15 @@ if (restartCol == c_red) {
     anim.direction = obj_player.direction;
     anim.depth = obj_player.depth;
     anim.cause = "restart";
+    
+    // creating boss 3 if restarted
+    if (room == rm_boss3) {
+        boss3 = instance_create(global.boss3lastx, global.boss3lasty, obj_scenery);
+        boss3.sprite_index = global.boss3sprite;
+        boss3.image_angle = global.boss3angle;
+    }
+    
     with (obj_player) instance_destroy();
-
     global.paused = false;
 }
 

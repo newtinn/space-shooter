@@ -25,7 +25,7 @@ global.gunx = 0;
 global.guny = 0;
 global.gunroom = 0;
 
-room_goto(rm_cutscene);</code>
+room_goto(rm_boss3_corridor);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

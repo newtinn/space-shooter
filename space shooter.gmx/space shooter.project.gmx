@@ -65,9 +65,6 @@
         <sprite>sprites\spr_tongue</sprite>
       </sprites>
       <sprites name="Boss2">
-        <sprites name="Elephant">
-          <sprite>sprites\spr_elephant_idle</sprite>
-        </sprites>
         <sprites name="Boss">
           <sprite>sprites\spr_boss2_shoot</sprite>
           <sprite>sprites\spr_boss2_head</sprite>
@@ -87,6 +84,7 @@
           </sprites>
         </sprites>
         <sprite>sprites\spr_puddle</sprite>
+        <sprite>sprites\spr_toxic_sign</sprite>
       </sprites>
       <sprites name="Boss1">
         <sprite>sprites\spr_boss1</sprite>
@@ -136,6 +134,13 @@
           <sprite>sprites\spr_boss4_gmo_3</sprite>
           <sprite>sprites\spr_boss4_gmo_4</sprite>
         </sprites>
+        <sprites name="Turtle">
+          <sprite>sprites\spr_turtle_0</sprite>
+          <sprite>sprites\spr_turtle_1</sprite>
+          <sprite>sprites\spr_turtle_2</sprite>
+          <sprite>sprites\spr_turtle_3</sprite>
+          <sprite>sprites\spr_turtle_4</sprite>
+        </sprites>
       </sprites>
     </sprites>
   </sprites>
@@ -178,7 +183,6 @@
       <object>objects\obj_boss1_col</object>
     </objects>
     <objects name="Boss2">
-      <object>objects\obj_elephant</object>
       <object>objects\obj_boss2</object>
       <object>objects\obj_puddle</object>
       <object>objects\obj_bubble</object>
@@ -209,6 +213,7 @@
       <object>objects\obj_pause_object_3d</object>
       <object>objects\obj_sign</object>
       <object>objects\obj_box</object>
+      <object>objects\obj_scenery</object>
     </objects>
     <objects name="Menu">
       <object>objects\obj_select</object>
@@ -224,6 +229,7 @@
     <objects name="Boss4">
       <object>objects\obj_boss4</object>
       <object>objects\obj_turret</object>
+      <object>objects\obj_tortise</object>
     </objects>
   </objects>
   <rooms name="rooms">
