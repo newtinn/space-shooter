@@ -1,58 +1,51 @@
-if (anim == 0) {
-    animNum = 0;
-    sprite_index = walk[0];
-}
-
-if (anim == 1) {
-    if (animNum < array_length_1d(walk)-1) {
-        animNum += 0.15;
-    } else {
-        animNum = 0;
+if (mode == 0) {
+    if (anglePicked == false) {
+        angleNew = irandom_range(0,360);
+        anglePicked = true;
     }
-
-    sprite_index = walk[animNum];
     
-    if (back == false) {
-        // walking towards the player
-        if (instance_exists(obj_player)) {
-            if (distance_to_object(obj_player) > 0.2) {
-                move_towards_point(obj_player.x,obj_player.y,1);
-                var pd = point_direction(x, y, obj_player.x, obj_player.y);
-                var dd = angle_difference(image_angle-90, pd);
-                image_angle -= min(abs(dd), 10) * sign(dd);
-            } else {
-                speed = 0;
-                count = 0;
-                anim = 2;
-            }
+    image_angle -= min(abs(angle_difference(direction,angleNew)), 5) * sign(angle_difference(direction,angleNew));
+    
+    if (abs(angle_difference(image_angle,angleNew)) <= 10) {
+        image_angle = angleNew;
+        direction = image_angle;
+        speed = 1;
+    } else {
+        speed = 0;
+    }
+    
+    if (speed > 0) {
+        if (frameNum < array_length_1d(frame)-1) {
+            frameNum += 0.1;
         } else {
-            speed = 0;
-            sprite_index = walk[0];
+            frameNum = 0;
         }
-    } else {
-        if (back == true) {
-            if (backNum < 20) {
-                speed = -0.25;
-                backNum += 1;
-            } else {
-                backNum = 0;
-                back = false;
-            }
-        }
+        sprite_index = frame[floor(frameNum)];
     }
 }
 
-if (anim == 2) {
-    if (animNum < array_length_1d(smash)-1) {
-        animNum += 0.3;
-    } else {
-        animNum = 0;
-        count += 1;
+if (mode == 1) {
+    if (anglePicked == false) {
+        angleNew = irandom_range(0,360);
+        anglePicked = true;
     }
     
-    if (count > 2) {
-        anim = 1;
+    image_angle -= min(abs(angle_difference(direction,angleNew)), 12.5) * sign(angle_difference(direction,angleNew));
+    
+    if (abs(angle_difference(image_angle,angleNew)) <= 20) {
+        image_angle = angleNew;
+        direction = image_angle;
+        speed = 3;
+    } else {
+        speed = 0;
     }
 
-    sprite_index = smash[animNum];
+    attackNum += 0.125;
+    
+    if (attackNum >= 2) {
+        attackNum = 0;
+    }
+    
+    
+    sprite_index = attack[attackNum];
 }

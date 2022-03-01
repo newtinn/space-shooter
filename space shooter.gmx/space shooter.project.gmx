@@ -142,6 +142,20 @@
           <sprite>sprites\spr_turtle_4</sprite>
         </sprites>
       </sprites>
+      <sprites name="Boss4New">
+        <sprite>sprites\Boss4New</sprite>
+        <sprites name="Walk">
+          <sprite>sprites\spr_boss4n_walk_0</sprite>
+          <sprite>sprites\spr_boss4n_walk_1</sprite>
+          <sprite>sprites\spr_boss4n_walk_2</sprite>
+          <sprite>sprites\spr_boss4n_walk_3</sprite>
+          <sprite>sprites\spr_boss4n_walk_4</sprite>
+        </sprites>
+        <sprites name="Run">
+          <sprite>sprites\spr_boss4_run_0</sprite>
+          <sprite>sprites\spr_boss4_run_1</sprite>
+        </sprites>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -172,6 +186,7 @@
       <script>scripts\scr_boss4_ai.gml</script>
     </scripts>
     <script>scripts\scr_player_colour.gml</script>
+    <script>scripts\collision_normal.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_main</font>

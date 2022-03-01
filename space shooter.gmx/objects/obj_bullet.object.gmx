@@ -28,6 +28,7 @@
             <string>objectFrom = "";
 
 origSpeed = speed;
+origAngle = image_angle;
 
 </string>
           </argument>
@@ -118,46 +119,14 @@ if (room != rm_cutscene) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (objectFrom == obj_player) {
-    if (global.boss4health &gt; 0) {
-        // making the boss bounce back a bit
-        obj_boss4.back = true;
-    
-        // making number to see if repel off
-        var repel = irandom_range(1,10);
-        
-        if (repel &lt; 8) {
-            if (global.boss4health &gt; 0) 
-                obj_boss4.hit = true;
-                if (global.gun == 0) {
-                    global.boss4health -= 1;
-                }
-                if (global.gun == 1) {
-                    global.boss4health -= 2;
-                }
-                
-                hit = instance_create(x + lengthdir_x(2,image_angle),y + lengthdir_y(2,image_angle),obj_bullet_hit);
-                hit.image_angle = image_angle;
-                with(self) instance_destroy();
-        } else {
-            bullet = instance_create(x,y,obj_bullet);
-            bullet.direction = direction-180;
-            bullet.direction = bullet.direction+irandom_range(-30,30);
-            bullet.image_angle = bullet.direction;
-            bullet.speed = 12.5;
-            bullet.origSpeed = 12.5;
-            
-            hit = instance_create(x,y,obj_bullet_hit);
-            hit.image_angle = image_angle;
-            
-            with(self) instance_destroy();
-        }
-    } else {
-        hit = instance_create(x,y,obj_bullet_hit);
-        hit.image_angle = image_angle;
-        instance_destroy();
-    }   
-}
+            <string>hit = instance_create(x + lengthdir_x(2,image_angle),y + lengthdir_y(2,image_angle),obj_bullet_hit);
+hit.image_angle = image_angle;
+with(other) instance_destroy();
+with(self) instance_destroy();
+/*if (instance_exists(obj_boss4)) {
+    obj_boss4.hit = true;
+    if (global.boss4health &gt; 0) global.boss4health -= 1;
+}*/
 </string>
           </argument>
         </arguments>
@@ -214,9 +183,26 @@ if (room != rm_cutscene) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hit = instance_create(x,y,obj_bullet_hit);
+            <string>/*hit = instance_create(x,y,obj_bullet_hit);
 hit.image_angle = image_angle;
-instance_destroy();
+instance_destroy();*/
+
+if (objectFrom == obj_player) {
+    bullet = instance_create(x,y,obj_bullet);
+    //bullet.direction = direction-180;
+    //bullet.direction = other.image_angle;
+    bullet.direction = image_angle + choose(-90,90);
+    bullet.image_angle = bullet.direction;
+    bullet.speed = 12.5;
+    bullet.origSpeed = 12.5;
+    //bullet.objectFrom = obj_player;
+    
+    with (self) instance_destroy();
+} else {
+    hit = instance_create(x,y,obj_bullet_hit);
+    hit.image_angle = image_angle;
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
