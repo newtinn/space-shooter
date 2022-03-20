@@ -155,6 +155,7 @@
           <sprite>sprites\spr_boss4_run_0</sprite>
           <sprite>sprites\spr_boss4_run_1</sprite>
         </sprites>
+        <sprite>sprites\spr_spawn</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -245,6 +246,7 @@
       <object>objects\obj_boss4</object>
       <object>objects\obj_turret</object>
       <object>objects\obj_tortise</object>
+      <object>objects\obj_egg</object>
     </objects>
   </objects>
   <rooms name="rooms">

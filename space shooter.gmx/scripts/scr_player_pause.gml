@@ -23,11 +23,11 @@ if (global.paused == true) {
     }
     
     if (instance_exists(obj_boss4)) {
-        boss4 = instance_create(obj_boss4.x,obj_boss4.y,obj_pause_object_3d);
-        boss4.sprite_index = obj_boss4.sprite_index;
-        boss4.image_angle = obj_boss4.image_angle;
-        boss4.depth = obj_boss4.depth;
-        boss4.type = "boss4";
+        //boss4 = instance_create(obj_boss4.x,obj_boss4.y,obj_pause_object_3d);
+        //boss4.sprite_index = obj_boss4.sprite_index;
+        //boss4.image_angle = obj_boss4.image_angle;
+        //boss4.depth = obj_boss4.depth;
+        //boss4.type = "boss4";
         instance_deactivate_object(obj_boss4);
     }
     

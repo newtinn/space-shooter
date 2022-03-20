@@ -121,7 +121,7 @@ if (room != rm_cutscene) {
             <kind>1</kind>
             <string>hit = instance_create(x + lengthdir_x(2,image_angle),y + lengthdir_y(2,image_angle),obj_bullet_hit);
 hit.image_angle = image_angle;
-with(other) instance_destroy();
+other.hp -= 1;
 with(self) instance_destroy();
 /*if (instance_exists(obj_boss4)) {
     obj_boss4.hit = true;

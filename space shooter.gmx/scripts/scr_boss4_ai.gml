@@ -35,7 +35,7 @@ if (mode == 1) {
     if (abs(angle_difference(image_angle,angleNew)) <= 20) {
         image_angle = angleNew;
         direction = image_angle;
-        speed = 3;
+        speed = 4;
     } else {
         speed = 0;
     }

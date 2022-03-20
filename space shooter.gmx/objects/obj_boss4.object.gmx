@@ -53,6 +53,8 @@ attackNum = 0;
 
 with (obj_turret) instance_destroy();
 
+hp = 2;
+
 alarm[0] = 60;
 </string>
           </argument>
@@ -79,8 +81,12 @@ alarm[0] = 60;
             <string>if (mode == 1) {
     var odd = irandom_range(0,10);
     
-    if (odd &lt;= 3) {
-        instance_create(x,y,obj_boss4);
+    if (odd &lt;= 5) {
+        egg = instance_create(x,y,obj_egg);
+        egg.image_angle = irandom_range(0,360);
+        goose = instance_create(x,y,obj_boss4);
+        goose.image_xscale = 0.5;
+        goose.image_yscale = 0.5;
     }
 }
 </string>
@@ -132,7 +138,7 @@ alarm[0] = 180;
             <kind>1</kind>
             <string>mode = 1;
 
-alarm[2] = 105;
+alarm[2] = 60;
 alarm[1] = 210;
 </string>
           </argument>
@@ -160,6 +166,16 @@ alarm[1] = 210;
 scr_boss4_ai();
 
 //show_debug_message(mode);
+
+// growing
+if (image_xscale &lt; 1 &amp;&amp; image_yscale &lt; 1) {
+    image_xscale += 0.001;
+    image_yscale += 0.001;
+}
+
+if (hp &lt;= 0) {
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
