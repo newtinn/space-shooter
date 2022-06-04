@@ -186,7 +186,7 @@ with(self) instance_destroy();
             <string>/*hit = instance_create(x,y,obj_bullet_hit);
 hit.image_angle = image_angle;
 instance_destroy();*/
-
+/*
 if (objectFrom == obj_player) {
     bullet = instance_create(x,y,obj_bullet);
     //bullet.direction = direction-180;
@@ -198,11 +198,11 @@ if (objectFrom == obj_player) {
     //bullet.objectFrom = obj_player;
     
     with (self) instance_destroy();
-} else {
+} else {*/
     hit = instance_create(x,y,obj_bullet_hit);
     hit.image_angle = image_angle;
     instance_destroy();
-}
+//}
 </string>
           </argument>
         </arguments>

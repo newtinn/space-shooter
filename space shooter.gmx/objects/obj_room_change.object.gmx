@@ -48,7 +48,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(roomTo);
+            <string>
+if (room != rm_boss4) {
+    room_goto(roomTo);
+} else {
+    obj_player.visible = false;
+    obj_gun.visible = false;
+    if (instance_number(obj_fade) &lt; 1) {    
+        fade = instance_create(0,0,obj_fade);
+        fade.roomTo = rm_finish;
+        fade.spd = 0.005;
+        fade.fadeType = "in";
+    }
+}
 </string>
           </argument>
         </arguments>

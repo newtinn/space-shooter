@@ -3,8 +3,8 @@
   <caption></caption>
   <width>640</width>
   <height>480</height>
-  <vsnap>16</vsnap>
-  <hsnap>16</hsnap>
+  <vsnap>32</vsnap>
+  <hsnap>32</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
@@ -59,17 +59,25 @@
     <instance objName="obj_wall" x="576" y="288" name="inst_CB5C95CE" locked="0" code="" scaleX="2" scaleY="4" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="544" y="256" name="inst_8FCD810E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_gun" x="544" y="256" name="inst_45512C70" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boss4" x="224" y="160" name="inst_5A3C948D" locked="0" code="//instance_destroy();&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_turret" x="80" y="384" name="inst_9D118679" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_turret" x="544" y="384" name="inst_1B19209C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_turret" x="544" y="80" name="inst_BF2971BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_room_change" x="608" y="224" name="inst_AEDA3E7C" locked="0" code="roomTo = rm_boss3;&#xA;" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
-    <instance objName="obj_turret" x="96" y="96" name="inst_F4929FF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door" x="32" y="224" name="inst_229CE85E" locked="0" code="image_angle = 90;&#xA;x = 32;&#xA;y = 288;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boss4" x="224" y="320" name="inst_D5E3B05A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boss4" x="288" y="256" name="inst_741DE8D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boss4" x="352" y="160" name="inst_DBD626B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boss4" x="352" y="320" name="inst_5A8E76A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_room_change" x="608" y="224" name="inst_AEDA3E7C" locked="0" code="roomTo = rm_boss3;" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
+    <instance objName="obj_box" x="512" y="176" name="inst_F2A92CBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_box" x="512" y="320" name="inst_A6144955" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_box" x="272" y="320" name="inst_80182C41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_box" x="272" y="192" name="inst_AE39C6FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_henchman" x="240" y="320" name="inst_5C1FDFD9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_henchman" x="240" y="192" name="inst_5308ACE1" locked="0" code="moveDirection = 1;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_henchman_chase" x="368" y="96" name="inst_7D31BBF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_henchman_chase" x="368" y="384" name="inst_33B2483B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_box" x="88" y="144" name="inst_A306A38F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_box" x="88" y="176" name="inst_C2F52F7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_box" x="88" y="208" name="inst_729D0A46" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_box" x="88" y="336" name="inst_F3094D0D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_box" x="88" y="368" name="inst_8185FCD7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_box" x="88" y="400" name="inst_27ECDE0D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_box" x="88" y="304" name="inst_3F557D8A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_box" x="88" y="112" name="inst_D0B3F3D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_box" x="88" y="80" name="inst_F58E503B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_room_change" x="0" y="224" name="inst_99C50355" locked="0" code="roomTo = rm_finish;&#xA;" scaleX="1" scaleY="2" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bk_tile" x="0" y="0" w="32" h="32" xo="32" yo="0" id="10000002" name="inst_9E2C811C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

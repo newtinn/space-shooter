@@ -52,7 +52,6 @@ if (global.paused == true) {
     } else {
         menuCol = c_white;
     }
-    
 } else {
     instance_activate_all();
 }

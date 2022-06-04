@@ -34,6 +34,8 @@
       <sprite>sprites\spr_bullet_hit</sprite>
       <sprite>sprites\spr_gun</sprite>
       <sprite>sprites\spr_gun2</sprite>
+      <sprite>sprites\spr_gun3</sprite>
+      <sprite>sprites\spr_lightning</sprite>
     </sprites>
     <sprites name="Door">
       <sprite>sprites\spr_door_horizontal_close</sprite>
@@ -158,10 +160,14 @@
         <sprite>sprites\spr_spawn</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\spr_hat</sprite>
+    <sprite>sprites\spr_ship</sprite>
+    <sprite>sprites\spr_ship2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bk1</background>
     <background>background\bk_tile</background>
+    <background>background\tl_ship</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -185,9 +191,11 @@
       <script>scripts\scr_boss2_ai.gml</script>
       <script>scripts\scr_temp_boss2.gml</script>
       <script>scripts\scr_boss4_ai.gml</script>
+      <script>scripts\scr_final_boss.gml</script>
     </scripts>
     <script>scripts\scr_player_colour.gml</script>
     <script>scripts\collision_normal.gml</script>
+    <script>scripts\scr_box_collisions.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_main</font>
@@ -241,12 +249,22 @@
       <object>objects\obj_player_cs</object>
       <object>objects\obj_crewmates_cs</object>
       <object>objects\obj_gun_cs</object>
+      <objects name="cutscene 2">
+        <object>objects\obj_big_ship_cs</object>
+        <object>objects\obj_ship_cs</object>
+      </objects>
     </objects>
     <objects name="Boss4">
       <object>objects\obj_boss4</object>
       <object>objects\obj_turret</object>
       <object>objects\obj_tortise</object>
       <object>objects\obj_egg</object>
+    </objects>
+    <objects name="Last Boss">
+      <object>objects\obj_henchman</object>
+      <object>objects\obj_henchman_chase</object>
+      <object>objects\obj_henchman_dead</object>
+      <object>objects\obj_lightning</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -268,6 +286,7 @@
     </rooms>
     <rooms name="Boss 4">
       <room>rooms\rm_boss4</room>
+      <room>rooms\rm_finish</room>
     </rooms>
     <rooms name="Gameplay">
       <room>rooms\rm_variables</room>
