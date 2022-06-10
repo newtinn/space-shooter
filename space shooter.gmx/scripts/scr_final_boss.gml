@@ -6,6 +6,11 @@ var newy = y + lengthdir_y(4, image_angle);
 bullet = instance_create(newx,newy - 4,obj_bullet);
 bullet.objectFrom = obj_henchman;
 bullet.direction = direction;
+// playing sound
+var shoot = choose(snd_shoot1,snd_shoot2);
+
+audio_play_sound(shoot,2,false);
+
 bullet.direction += irandom_range(-2,2);
 bullet.image_angle = bullet.direction;
 bullet.speed = 12.5;

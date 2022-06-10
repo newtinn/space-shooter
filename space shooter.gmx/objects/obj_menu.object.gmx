@@ -51,7 +51,9 @@ quitColour = c_white;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// play button: X=276 to 355, Y=140 to 160
+            <string>//show_debug_message("X: "+string(mouse_x)+", Y: "+string(mouse_y));
+
+// play button: X=276 to 355, Y=140 to 160
 if (mouse_x &gt; 276) &amp;&amp; (mouse_x &lt; 355) &amp;&amp; (mouse_y &gt; 140) &amp;&amp; (mouse_y &lt; 160) {
     playColour = c_red;
 } else {
@@ -103,9 +105,11 @@ if (mouse_x &gt; 276) &amp;&amp; (mouse_x &lt; 355) &amp;&amp; (mouse_y &gt; 242
             <string>/// Choosing which room to go to
 
 if (playColour == c_red) {
+    audio_play_sound(snd_select,3,false);
     room_goto(rm_select);    
 }
 if (quitColour == c_red) {
+    audio_play_sound(snd_select,3,false);
     game_end();
 }
 </string>

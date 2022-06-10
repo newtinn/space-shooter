@@ -125,7 +125,13 @@ if (instance_exists(obj_fade)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self_3d_player();
+            <string>if (global.colour[global.myColour] == "black") {
+    for (var _i=0; _i&lt;image_number; _i++) {
+        draw_sprite_ext(sprite_index, _i, x, y-_i, 1.55, 1.55, image_angle, c_white, image_alpha);
+    }
+}
+
+draw_self_3d_player();
 </string>
           </argument>
         </arguments>

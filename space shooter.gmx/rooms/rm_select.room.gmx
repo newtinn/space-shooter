@@ -13,11 +13,11 @@
   <code>randomize();
 global.playerColour[0] = c_white;
 global.playerColour[1] = c_blue;
-global.playerColour[2] = make_colour_rgb(211,88,88);
+global.playerColour[2] = make_colour_rgb(255, 49, 49);
 global.playerColour[3] = c_purple;
 global.playerColour[4] = c_lime;
 global.playerColour[5] = c_yellow;
-global.playerColour[6] = make_colour_rgb(50,50,50);
+global.playerColour[6] = c_black;
 
 global.colour[0] = "white";
 global.colour[1] = "blue";
@@ -25,7 +25,7 @@ global.colour[2] = "red";
 global.colour[3] = "purple";
 global.colour[4] = "lime";
 global.colour[5] = "yellow";
-global.colour[6] = "gray";
+global.colour[6] = "black";
 
 global.myColour = 0;</code>
   <enableViews>-1</enableViews>

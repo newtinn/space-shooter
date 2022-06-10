@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>/// Initializing variables
 
+audio_play_sound(snd_hit_cs,3,false);
+
 currentFrame[0] = spr_player_gmo_1;
 currentFrame[1] = spr_player_gmo_2;
 currentFrame[2] = spr_player_gmo_3;
@@ -164,6 +166,7 @@ if (str == messageNormal) &amp;&amp; (textShowTimer == 0) {
           <argument>
             <kind>1</kind>
             <string>if (button1Colour == c_red) {
+    audio_play_sound(snd_select,3,false);
     if (instance_number(obj_fade) &lt; 1) {
         fade = instance_create(0,0,obj_fade);
         fade.roomTo = rm_variables;
@@ -171,6 +174,7 @@ if (str == messageNormal) &amp;&amp; (textShowTimer == 0) {
 }
 
 if (button2Colour == c_red) {
+    audio_play_sound(snd_select,3,false);
     if (instance_number(obj_fade) &lt; 1) {
         fade = instance_create(0,0,obj_fade);
         fade.roomTo = rm_title;

@@ -4,7 +4,29 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="Shooting">
+      <sound>sound\snd_shoot1</sound>
+      <sound>sound\snd_shoot2</sound>
+      <sound>sound\snd_shoot3</sound>
+      <sound>sound\snd_shoot_boss2</sound>
+      <sound>sound\snd_shoot_boss3</sound>
+      <sound>sound\snd_shoot_boss4_2</sound>
+    </sounds>
+    <sounds name="Hit">
+      <sound>sound\snd_hit1</sound>
+      <sound>sound\snd_hit2</sound>
+      <sound>sound\snd_hit_wall</sound>
+      <sound>sound\snd_hit_cs</sound>
+      <sound>sound\snd_hit_boss3</sound>
+    </sounds>
+    <sounds name="Walking">
+      <sound>sound\snd_walk</sound>
+      <sound>sound\snd_roll</sound>
+    </sounds>
+    <sound>sound\snd_select</sound>
+    <sound>sound\snd_take_off</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Player">
       <sprites name="Walking">

@@ -128,6 +128,7 @@ alarm[1] = 90;
     if (move == 1) {
         moveTimer += 1;
         if (moveTimer &gt;= 90) {
+            moveTimer = 0;
             move = 2;
         }
     
@@ -144,6 +145,8 @@ alarm[1] = 90;
     if (move == 2) {
         currentFrameNum = 0;
         if (shot == false) {
+            audio_play_sound(snd_shoot_boss4_2,3,false);
+        
             // checking position to create bullet
             var newx = x + lengthdir_x(4, image_angle);
             var newy = y + lengthdir_y(4, image_angle);
@@ -163,8 +166,7 @@ alarm[1] = 90;
             speed = -1;
             
             if (moveTimer &gt;= 10) {
-                speed = 0;
-                move = 0;
+                move = 1;
                 moveTimer = 0;
             }
         } 
