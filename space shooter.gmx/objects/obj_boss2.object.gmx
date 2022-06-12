@@ -262,7 +262,7 @@ if (puddleStep == true) {
         }
     
         if (global.boss2health &gt; 0) {
-            audio_play_sound(snd_hit2,2,false);
+            if (global.mute == false) audio_play_sound(snd_hit2,2,false);
             hit = true;
             global.boss2health -= 1;
         } else {

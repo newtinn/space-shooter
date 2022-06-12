@@ -166,6 +166,8 @@ if (global.paused == false) {
           <argument>
             <kind>1</kind>
             <string>if (other.objectFrom == obj_player) {
+    if (global.mute == false) audio_play_sound(snd_hit3,3,false);
+
     hit = true;
     hp -= 1;
     with (other) instance_destroy();

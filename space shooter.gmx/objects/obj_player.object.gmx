@@ -228,7 +228,7 @@ if (roll == false) &amp;&amp; (global.paused == false) {
     
     sprite_index = currentFrame[currentFrameNum];
     if (keyboard_check_pressed(vk_space)) {
-        audio_play_sound(snd_roll,3,false);
+        if (global.mute == false) audio_play_sound(snd_roll,3,false);
         roll = true;
     }
 }
@@ -392,7 +392,7 @@ instance_destroy();
 }
 
 if (restartCol == c_red) {
-    audio_play_sound(snd_select,3,false);
+    if (global.mute == false) audio_play_sound(snd_select,3,false);
 
     with(obj_gun) instance_destroy();
 
@@ -416,7 +416,7 @@ if (restartCol == c_red) {
 
 
 if (menuCol == c_red) {
-    audio_play_sound(snd_select,3,false);
+    if (global.mute == false) audio_play_sound(snd_select,3,false);
 
     with(obj_gun) instance_destroy();
 

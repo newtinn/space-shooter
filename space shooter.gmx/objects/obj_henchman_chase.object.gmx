@@ -145,7 +145,7 @@ alarm[1] = 90;
     if (move == 2) {
         currentFrameNum = 0;
         if (shot == false) {
-            audio_play_sound(snd_shoot_boss4_2,3,false);
+            if (global.mute == false) audio_play_sound(snd_shoot_boss4_2,3,false);
         
             // checking position to create bullet
             var newx = x + lengthdir_x(4, image_angle);
@@ -238,6 +238,7 @@ if (hp &lt;= 0) {
           <argument>
             <kind>1</kind>
             <string>if (other.objectFrom == obj_player) {
+    if (global.mute == false) audio_play_sound(snd_hit3,3,false);
     hit = true;
     hp -= 1;
     with (other) instance_destroy();

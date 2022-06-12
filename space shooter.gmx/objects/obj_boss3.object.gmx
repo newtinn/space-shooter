@@ -331,7 +331,7 @@ if (hit == true) {
             <string>if (instance_exists(obj_player)) {
     if (other.objectFrom == obj_player) {
         if (global.boss3health &gt; 0) {
-            audio_play_sound(snd_hit_boss3,3,false);
+            if (global.mute == false) audio_play_sound(snd_hit_boss3,3,false);
             hit = true;
             if (global.gun == 0) {
                 global.boss3health -= 1;

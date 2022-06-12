@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>/// Initializing variables
 
-audio_play_sound(snd_hit_cs,3,false);
+if (global.mute == false) audio_play_sound(snd_hit_cs,3,false);
 
 currentFrame[0] = spr_player_gmo_1;
 currentFrame[1] = spr_player_gmo_2;

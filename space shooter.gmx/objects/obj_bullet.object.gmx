@@ -150,7 +150,7 @@ with(self) instance_destroy();
           <argument>
             <kind>1</kind>
             <string>if (objectFrom != obj_player_cs) {
-    audio_play_sound(snd_hit_cs,3,false);
+    if (global.mute == false) audio_play_sound(snd_hit_cs,3,false);
 
     // creating death animation
     anim = instance_create(obj_player_cs.x,obj_player_cs.y,obj_player_death);
@@ -185,7 +185,7 @@ with(self) instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(snd_hit_wall,3,false);
+            <string>if (global.mute == false) audio_play_sound(snd_hit_wall,3,false);
 
 /*hit = instance_create(x,y,obj_bullet_hit);
 hit.image_angle = image_angle;
@@ -229,7 +229,7 @@ if (objectFrom == obj_player) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(snd_hit_wall,3,false);
+            <string>if (global.mute == false) audio_play_sound(snd_hit_wall,3,false);
 
 hit = instance_create(x,y,obj_bullet_hit);
 hit.image_angle = image_angle;
@@ -319,7 +319,7 @@ instance_destroy();
 hit.image_angle = image_angle;
 with(self) instance_destroy();
 obj_boss1.hit = true;
-audio_play_sound(snd_hit1,2,false);
+if (global.mute == false) audio_play_sound(snd_hit1,2,false);
 if (global.boss1health &gt; 0) global.boss1health -= 1;
 </string>
           </argument>

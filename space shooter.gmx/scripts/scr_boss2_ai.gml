@@ -37,7 +37,7 @@ if (instance_exists(obj_player)) && (global.boss2health > 0) {
             if (shootTimer >= 0) {
                 shootTimer -= 1;
             } else {
-                audio_play_sound(snd_shoot_boss2,2,false);
+                if (global.mute == false) audio_play_sound(snd_shoot_boss2,2,false);
             
                 // creating the bullet
                 bullet = instance_create(x,y - 6,obj_bullet);

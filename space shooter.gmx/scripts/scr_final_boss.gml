@@ -9,7 +9,7 @@ bullet.direction = direction;
 // playing sound
 var shoot = choose(snd_shoot1,snd_shoot2);
 
-audio_play_sound(shoot,2,false);
+if (global.mute == false) audio_play_sound(shoot,2,false);
 
 bullet.direction += irandom_range(-2,2);
 bullet.image_angle = bullet.direction;

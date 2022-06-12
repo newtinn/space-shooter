@@ -19,6 +19,7 @@
       <sound>sound\snd_hit_wall</sound>
       <sound>sound\snd_hit_cs</sound>
       <sound>sound\snd_hit_boss3</sound>
+      <sound>sound\snd_hit3</sound>
     </sounds>
     <sounds name="Walking">
       <sound>sound\snd_walk</sound>
@@ -266,6 +267,7 @@
       <object>objects\obj_arrow_select</object>
       <object>objects\obj_title</object>
       <object>objects\obj_menu</object>
+      <object>objects\obj_settings</object>
     </objects>
     <objects name="cutscene">
       <object>objects\obj_player_cs</object>
@@ -291,8 +293,10 @@
   </objects>
   <rooms name="rooms">
     <rooms name="Menu">
+      <room>rooms\rm_global</room>
       <room>rooms\rm_title</room>
       <room>rooms\rm_menu</room>
+      <room>rooms\rm_settings</room>
       <room>rooms\rm_select</room>
     </rooms>
     <rooms name="Boss 1">

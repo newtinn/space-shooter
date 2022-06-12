@@ -49,7 +49,7 @@ alarm[0] = irandom_range(180,300);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>audio_play_sound(snd_take_off,3,false);
+            <string>if (global.mute == false) audio_play_sound(snd_take_off,3,false);
 instance_create(x,y,obj_ship_cs);
 </string>
           </argument>

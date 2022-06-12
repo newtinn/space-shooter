@@ -81,7 +81,7 @@ if (instance_exists(obj_boss3)) {
         if (stopped == false) {
             if (sound == false) {
                 if (instance_exists(obj_player)) {
-                    audio_play_sound(snd_shoot_boss3,3,false);
+                    if (global.mute == false) audio_play_sound(snd_shoot_boss3,3,false);
                 }
                 sound = true;
             }
