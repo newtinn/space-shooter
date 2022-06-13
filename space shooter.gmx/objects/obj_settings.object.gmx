@@ -8,6 +8,106 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>soundText = c_white;
+fullscreenText = c_white;
+backText = c_white;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//show_debug_message("X: "+string(mouse_x)+",Y: "+string(mouse_y));
+
+if (mouse_x &gt;= 260 &amp;&amp; mouse_x &lt;= 376) &amp;&amp; (mouse_y &gt;= 172 &amp;&amp; mouse_y &lt;= 192) {
+    soundText = c_red;
+} else {
+    soundText = c_white;
+}
+
+if (mouse_x &gt;= 220 &amp;&amp; mouse_x &lt;= 412) &amp;&amp; (mouse_y &gt;= 196 &amp;&amp; mouse_y &lt;= 214) {
+    fullscreenText = c_red;
+} else {
+    fullscreenText = c_white;
+}
+
+if (mouse_x &gt;= 190 &amp;&amp; mouse_x &lt;= 344) &amp;&amp; (mouse_y &gt;= 238 &amp;&amp; mouse_y &lt;= 256) {
+    backText = c_red;
+} else {
+    backText = c_white;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="53">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (soundText == c_red) {
+    global.mute = !global.mute;
+}
+
+if (fullscreenText == c_red) {
+    window_set_fullscreen(!window_get_fullscreen());
+}
+
+if (backText == c_red) {
+    if (global.mute == false) audio_play_sound(snd_select,3,false);
+    room_goto(rm_menu);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
@@ -41,6 +141,7 @@ draw_text_transformed(view_wport[0]/2, (view_hport[0]/2)-64, text, scale, scale,
 // drawing settings
 draw_set_font(fnt_main);
 draw_set_halign(fa_center);
+draw_set_colour(soundText);
 if (global.mute == false) {
     var text = "SOUND: ON";
 } else {
@@ -54,6 +155,7 @@ draw_text_transformed(view_wport[0]/2, (view_hport[0]/2)-32, text, scale, scale,
 // drawing help
 draw_set_font(fnt_main);
 draw_set_halign(fa_center);
+draw_set_colour(fullscreenText);
 if (window_get_fullscreen() == false) {
     var text = "FULLSCREEN: OFF";
 } else {
@@ -67,80 +169,12 @@ draw_text_transformed(view_wport[0]/2, (view_hport[0]/2)-20, text, scale, scale,
 // drawing help
 draw_set_font(fnt_main);
 draw_set_halign(fa_center);
+draw_set_colour(backText);
 var text = "BACK";
 var wantSize = 8; // height of text I want
 var currSize = string_height(text);
 var scale = wantSize / currSize;
 draw_text_transformed(view_wport[0]/2, (view_hport[0]/2), text, scale, scale, 0);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="50">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>window_set_fullscreen(!window_get_fullscreen());
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="49">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.mute = !global.mute;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="9" enumb="13">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>room_goto(rm_menu);
 </string>
           </argument>
         </arguments>

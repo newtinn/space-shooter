@@ -78,6 +78,8 @@ hat = false;
 
 walkSound = false;
 
+show_debug_message(room);
+
 alarm[1] = 60;
 </string>
           </argument>

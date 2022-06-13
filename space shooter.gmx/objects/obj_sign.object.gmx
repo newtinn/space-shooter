@@ -3,7 +3,7 @@
   <spriteName>spr_sign</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>200</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>showText = false;
+text="";
 </string>
           </argument>
         </arguments>
@@ -50,7 +51,7 @@
             <kind>1</kind>
             <string>image_angle = 20;
 
-if (distance_to_object(obj_player) &lt; 50) {
+if (distance_to_object(obj_player) &lt; 20) {
     showText = true;
 } else {
     showText = false;
@@ -83,10 +84,11 @@ if (distance_to_object(obj_player) &lt; 50) {
 if (showText == true) {
     draw_set_font(fnt_main);
     draw_set_halign(fa_center);
-    var text = "Well done!#You have finished the demo of Captain Solus!#The game is still a work in progress.#If you want to check out more#of my games go to:#newtinn.itch.io";
-    var wantSize = 32; // height of text I want
+    var wantSize = 14; // height of text I want
     var currSize = string_height(text);
     var scale = wantSize / currSize;
+    draw_set_colour(c_black);
+    draw_text_transformed((x/2)+1, (y/2)+4.1,text, scale, scale, 0);
     draw_set_colour(c_white);
     draw_text_transformed(x/2, (y/2)+4,text, scale, scale, 0);
 }

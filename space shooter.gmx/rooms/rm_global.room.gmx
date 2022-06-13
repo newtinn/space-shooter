@@ -12,6 +12,10 @@
   <showcolour>-1</showcolour>
   <code>global.mute = false;
 
+window_set_size(640,480);
+window_center();
+window_set_position(window_get_x()-160,window_get_y()-120);
+
 room_goto(rm_title);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
